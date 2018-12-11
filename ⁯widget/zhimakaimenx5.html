@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>人防防化产品信息查证系统</title>
+		<script src="./js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="./css/tongyong.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<style type="text/css">
+			#header {
+		background-color: #FA4D47;
+	}
+	#header *{
+		color: white;
+	}
+	
+	#fanhui {
+		display: inline-block;
+		margin-top: 3px;
+		margin-left: 5px;
+	}
+	
+	#fanhui img {
+	    width: 30px;
+	    height: 30px;
+	    margin-left: 6px;
+	    margin-top: 5px;
+	}
+	.mui-bar{
+		height: initial;
+	}
+	#biaoti{
+		font-size:16px;
+	}
+			
+			body {
+				background-color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a id="fanhui" class="" onclick="cw();">
+				<img src="image/back.png" />
+			</a>
+			<h1 class="mui-title" id="biaoti"></h1>
+		</header>
+	</body>
+
+	<script src="./js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/tongyong.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/api.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var urls = geiGet('urls',false);
+		var type = geiGet('type',false);
+			urls = decodeURIComponent(urls);
+		
+		console.log(urls+'x5');
+		
+		apiready = function() {
+			var header = $api.byId('header');
+			$api.fixStatusBar(header);
+			var headerH = $api.offset(header).h + 0;
+			headerH = 0;
+//			var urls = geiGet('urls', false);
+			
+			var biaoti = geiGet('biaoti', false);
+			biaoti = decodeURIComponent(biaoti);
+			var op = {
+				'name': 'zhimakaimen',
+				'html': urls,
+				'yh': headerH
+			};
+			document.getElementById("biaoti").innerText = biaoti;
+//			qitaliulanqi(op);
+
+			
+			
+			
+			var browser = api.require('webBrowser');
+				browser.openView({
+				    url: urls,
+				    rect: {
+				        x: 0,
+				        y: 0,
+				        w: 'auto',
+				        h: 'auto'
+				    }
+				}, function(ret, err) {
+				    switch (ret.state) {
+				        case 0:
+				            break;
+				        case 1:
+				            break;
+				        case 2:
+				            break;
+				        case 3:
+				            break;
+				        case 4:
+				            break;
+				        default:
+				            break;
+				    }
+				});
+			
+			
+		};
+
+		function qitaliulanqi(op) {
+			api.openFrame({
+				name: op.name,
+				url: op.html,
+
+				bounces: false,
+				scaleEnabled: true,
+				bgColor: '#fff',
+				rect: {
+					x: 0,
+					y: op.yh,
+					w: 'auto',
+					h: 'auto',
+				},
+				//				progress :{
+				//						type 	: 'default',
+				//						title	:	"标题",
+				//  					text	:	"内容",
+				//				},
+			});
+		}
+	</script>
+
+</html>

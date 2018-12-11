@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>百姓商城</title>
+		<script src="./js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="./css/tongyong.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<style type="text/css">
+			#header {
+		background-color: #FA4D47;
+	}
+	#header *{
+		color: white;
+	}
+	
+	#fanhui {
+		display: inline-block;
+		margin-top: 3px;
+		margin-left: 5px;
+	}
+	
+	#fanhui img {
+	    width: 30px;
+	    height: 30px;
+	    margin-left: 6px;
+	    margin-top: 5px;
+	}
+	.mui-bar{
+		height: initial;
+	}
+	#biaoti{
+		font-size:16px;
+	}
+			
+			body {
+				background-color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav" style="display: none;">
+			<a id="fanhui" class="" onclick="cw();">
+				<img src="image/back.png" />
+			</a>
+			<h1 class="mui-title" id="biaoti"></h1>
+		</header>
+	</body>
+
+	<script src="./js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/tongyong.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/api.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var urls = geiGet('urls',false);
+		var type = geiGet('type',false);
+			urls = decodeURIComponent(urls);
+		
+		console.log(urls);
+		
+		apiready = function() {
+			var header = $api.byId('header');
+			$api.fixStatusBar(header);
+			var headerH = $api.offset(header).h + 0;
+			headerH = 0;
+//			var urls = geiGet('urls', false);
+			
+			var biaoti = geiGet('biaoti', false);
+			biaoti = decodeURIComponent(biaoti);
+			var op = {
+				'name': 'zhimakaimen',
+				'html': urls,
+				'yh': headerH
+			};
+			document.getElementById("biaoti").innerText = biaoti;
+			
+			
+			var headerH = 24;
+
+			//	如果是苹果
+			if(api.systemType == 'ios') {
+				headerH = 20;
+			}
+			
+			//	headerH = 0;
+			
+			op.yh = headerH;
+			
+			var useWKWebView = false;
+			
+			var winName = api.winName;
+			switch (winName){
+				
+				case 'fabuershou':
+					useWKWebView = true;
+					break;
+				
+				case 'bianjiershou':
+					useWKWebView = true;
+					break;
+				
+				case 'fabuzhuti':
+					useWKWebView = true;
+					break;
+				case 'fabuzhuti2':
+					useWKWebView = true;
+					break;
+				case 'bianjizhuti':
+					useWKWebView = true;
+					break;
+				case 'fabuzhuti2':
+					useWKWebView = true;
+					break;
+				case 'faxianxiangqing':
+					useWKWebView = true;
+					break;
+				case 'danliao':
+//					useWKWebView = true;
+					break;
+				default:
+					break;
+			}
+			
+			op.useWKWebView = useWKWebView;
+			
+			
+			qitaliulanqi(op);
+		};
+
+		function qitaliulanqi(op) {
+			
+
+			
+			var headerH = parseInt( session('app-margin-top') );
+			var footerH = parseInt( session('app-margin-bottom') );
+			
+			api.openFrame({
+				name: op.name,
+				url: op.html,
+
+				bounces: false,
+				scaleEnabled: true,
+				allowEdit : true,
+				bgColor: '#fff',
+				useWKWebView:op.useWKWebView,
+				rect: {
+					x: 0,
+					y: headerH,
+					w: 'auto',
+					h: 'auto',
+					marginBottom: footerH
+				},
+//				animation: {
+//					type: 'none', //动画类型（详见动画类型常量）
+//					subType: "none", //动画子类型（详见动画子类型常量）
+//					duration: 0 //动画过渡时间，默认300毫秒
+//				},
+				//				progress :{
+				//						type 	: 'default',
+				//						title	:	"标题",
+				//  					text	:	"内容",
+				//				},
+			});
+		}
+		
+		function imhuitui(){//从聊天窗口返回，更新消息记录列表数据
+			
+			 api.addEventListener({
+		        name: 'keyback'
+		    }, function(ret, err) {
+				api.execScript({
+					name : 'msxIm',
+				    frameName: 'im_win',
+				    script: '_init();'
+				});
+				
+				msxBack();
+		    	
+		    })
+			
+		}
+		
+	</script>
+
+</html>

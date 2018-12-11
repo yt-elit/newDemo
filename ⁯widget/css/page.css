@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/*
+ 分页样式
+ * */
+
+.rfb-page {
+	text-align: center;
+	margin-bottom: 100px;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #666;
+}
+
+.rfb-page .rfb-page-list {
+	display: inline-block;
+	width: 28px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	background: #f7f7fa;
+	margin-right: 1px;
+	margin-left: 1px;
+}
+
+.rfb-page .first .rfb-page-list {
+	width: 50px;
+	color: white;
+	background: #1C66A0;
+}
+
+.rfb-page .span .rfb-page-list {
+	width: 50px;
+	color: black;
+	background: #EEE;
+}
+
+.rfb-page .active {
+	color: #fff;
+	background: #205299;
+}
+.rfb-page .rfb-page-list-noclick{
+	color: black;
+}

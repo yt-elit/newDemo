@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var timestamp = Date.parse(new Date());
+	var file_name	=	timestamp;
+	
+	var videoRecorder;
+	apiready = function(){
+		videoRecorder = api.require('videoRecorder');
+		videoRecorder.open({
+		    rect: {
+		        x: 0,
+		        y: 0,
+		        w: api.frameWidth,
+//		        h: 'auto'
+		    },
+		    quality: "medium",
+		    saveToAlbum: false,
+		    save: {
+		    	name : file_name,
+		        type: 'mpeg4'
+		    },
+		    fixedOn: api.frameName,
+		    fixed: false,
+		    saveToAlbum : true,
+		}, function(ret) {
+		    if (ret&&ret.eventType=='finished') {//拍摄完毕后
+		        
+		        console.log(JSON.stringify(ret));
+		        
+		        ol('正在载入',1);
+				videoRecorder.close();
+		        
+		        api.execScript({
+					name : 'fabuzhuti2',
+				    frameName: 'zhimakaimen',
+				    script: "zairushipin('"+ret.filePath+"','"+ret.thumbnailPath+"');"
+				});
+				
+				setTimeout(function() {
+					msxBack();
+				}, 1000);
+		        
+		    }
+		});
+
+
+	}
+	
+	
+	function kaishiluxiang(){
+		videoRecorder.start({
+		    timer: 4444,
+		});
+	}
+	
+	function jieshuluxiang(){
+		videoRecorder.stop();
+	}
+</script>

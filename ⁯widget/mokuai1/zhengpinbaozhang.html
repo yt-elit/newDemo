@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>客服中心</title>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="ziyuan/mui.css" />
+		<style type="text/css">
+			body{
+				margin: 0;
+			}
+			.mui-table-view-cell:after{
+				background-color: white;
+			}
+			.remen-text{
+				font-size: 15px;
+			}
+			li{
+				background-color: white;
+			}
+			.list-box{
+				float: left;
+				display: block;
+			}
+			.dian{
+				    font-weight: bold;
+    margin-right: 5px;
+    color: rgb(72,195,255);
+			}
+			
+			.mui-navigate-right:after, .mui-push-right:after{
+				right:4px;
+			}
+			.content img{
+				width: 100%;
+			}
+			#zixundianhua {
+				font-size: 0.8rem;
+				    color: #2f9fe0;
+			}
+			#zixundianhua span{
+				font-size: 1rem;
+			}
+			
+			#menu{
+				width: 100%;
+				position: fixed;
+				top:45px;
+			}
+			
+			.menu-list{
+				float: left;
+				height: 34px;
+				line-height: 34px;
+				text-align: center;
+				background-color: dodgerblue;
+				color: white;
+				font-size: 14px;
+			}
+			.menu-list.active{
+				color: red;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content" style="background-color: white;">
+			<header class="mui-bar mui-bar-nav" style="background-color: white;">
+			    <a onclick="msxBack()" class="mui-icon mui-icon-left-nav mui-pull-left" style="color: black;"></a>
+			    <h1 class="mui-title" style="font-size: 0.8rem;">正品保证</h1>
+			    <a id="zixundianhua" class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-phone"></span>咨询电话</a>
+			</header>
+			
+			<div id="menu">
+
+			</div>
+			<script type="text/html" id="menu-tp">
+				<% for(var i = 0 ; i< data.length ; i++){ %>
+					<div class="menu-list <% if(i==0){ %>active<%}%>" style="width:<%= data[i].width %>;">
+						<%== data[i].article_title %>
+					</div>
+				<% } %>
+			</script>
+			
+			<div style="height: 79px;"></div>
+			<div id="page-box">
+				
+			</div>
+			<script type="text/html" id="page-tp">
+				<% for(var i = 0 ; i< data.length ; i++){ %>
+					<div class="content page<%= i %>" style="<% if(i==0){ %><%}else{%>display:none;<%}%>">
+						<%== data[i].article_content %>
+					</div>
+				<% } %>
+			</script>
+			
+			
+			
+		</div>
+		
+		
+		
+		
+		
+	</body>
+</html>
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/zhengpinbaozhang.js" type="text/javascript" charset="utf-8"></script>

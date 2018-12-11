@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8" />
+	<title>单聊</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/swiper-3.4.1.min.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/weui.css" />
+	
+	<script type="text/javascript">
+		var ios_click = 1;
+	</script>
+	
+	<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/fontSize.js"></script>
+	<script src="js/swiper-3.4.1.min.js"></script>
+	<script src="js/wcPop/wcPop.js"></script>
+	<script src="js/weui.min.js"></script>
+	<style type="text/css">
+		.hongbao-box{
+			    background-color: transparent!important;
+    border-width: 0;
+    border-radius: .07rem;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+		}
+		.hongbao{
+			    vertical-align: top;
+			    pointer-events: none;
+			    max-height: 5.4rem;
+			width: 2.4rem!important;
+		}
+		.hongbaojine-box{
+			    text-align: center;
+			    margin-top: -0.6rem;
+			    margin-bottom: 0.5rem;
+			    color: white;
+			    padding-left: 0.3rem;
+			    font-weight: bold;
+		}
+		
+		.goods-box{
+			        width: 5rem;
+		}
+		.goods-img-box{
+			float: left;
+    width: 1.5rem;
+		}
+		.goods-img-box img{
+			width: 100%;
+			height: 100%;
+		}
+		.goods-text-box{
+			        float: left;
+    width: 2.9rem;
+    margin-left: 0.1rem;
+		}
+		.goods-title{
+			overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+		}
+		.goods-price{
+			color: red;
+    		margin-top: 0.2rem;
+		}
+		.chakangengzaoxiaoxi{
+			text-align: center;
+		    margin: 0.2rem 0;
+		    color: #049ce4;
+		    display: none;
+		}
+		.bofangzhong{
+			width: 0.5rem;
+		}
+		.msg-yuyin p{
+			    padding-right: 0.1rem;
+    			float: left;
+		}
+		.msg-yuyin img{
+			    display: inline-block;
+    			float: left;
+    			width: 0.4rem;
+		}
+		.yuyintishi{
+			color: dodgerblue;
+		}
+		.zuixia{
+			margin-bottom: 1rem!important;
+		}
+	</style>
+</head>
+<body>
+	<div id="luyinmengban" style="background-color: rgba(0,0,0,0.2);position: fixed;width: 100%;height: 100vh;z-index: 2000;display: none;">
+	</div>
+	<!-- <>微聊主容器 -->
+	<div class="wechat__panel clearfix">
+		<div class="wc__chat-wrapper flexbox flex__direction-column">
+			<!-- //顶部 -->
+			<div class="wc__headerBar fixed">
+				<div class="inner flexbox">
+					<a class="back splitline" href="javascript:;" onclick="huitui()"></a>
+					<h2 class="barTit flex1" id="to_member_name"></h2>
+					<a class="barIco" href="javascript:;"></a>
+				</div>
+			</div>
+			<!-- //微聊消息上墙面板 -->
+			<div class="wc__chatMsg-panel flex1">
+				<div class="chatMsg-cnt">
+					<div onclick="chakangengzaoxiaoxi()" class="chakangengzaoxiaoxi">查看历史消息</div>
+					<ul class="clearfix" id="J__chatMsgList">
+						
+					</ul>
+				</div>
+			</div>
+			<script type="text/html" id="list-tp">
+			<% for(var i = 0;i<data.length;i++){ %>
+			<li id="imid<%= data[i].id %>" class="<% if(data[i].member_id==member_id){ %>me<%}else{%>others<%}%>">
+				<% if(data[i].member_id==to_member_id){ %>
+				<a onclick="msxGerenzhuye(<%= to_member_id %>)" class="avatar" ><img src="<%= to_member_avatar %>" /></a>
+				<% } %>
+				<div class="content">
+					<% if(data[i].type == 1){ %>
+					<div class="msg">
+						<%== data[i].neirong %>
+					</div>
+					<% } %>
+					<% if(data[i].type == 2){ %>
+					<div class="msg picture">
+						<img class="img__pic" src="<%== data[i].neirong %>" />
+					</div>
+					<% } %>
+					<% if(data[i].type == 3){ %>
+					<div onclick="dakaiditu('<%= data[i].lng %>','<%= data[i].lat %>');" class="msg picture">
+						<img class="img__pic" src="<%== data[i].neirong %>" />
+					</div>
+					<% } %>
+					<% if(data[i].type == 4){ %>
+					<div class="msg hongbao-box">
+						<img class="img__pic hongbao" src="img/wchat/dashang.png" />
+						<div class="hongbaojine-box">
+							<span class="hongbaojine"><%== data[i].neirong %> 元</span>
+						</div>
+					</div>
+					<% } %>
+					<% if(data[i].type == 5){ %>
+					<div onclick="shangpinxiangqing(<%== data[i].neirong %>)" class="msg goods-box">
+						<div class="goods-img-box">
+							<img src="<%= data[i].goods_image %>"/>
+						</div>
+						<div class="goods-text-box">
+							<div class="goods-title">
+								<%= data[i].goods_name %>
+							</div>
+							<div class="goods-price">
+								￥ <%= data[i].goods_price %> 元
+							</div>
+						</div>
+					</div>
+					<% } %>
+					<% if(data[i].type == 6){ %>
+					<div onclick="bofangshipin(this)" class="msg video">
+						<img class="img__video" src="<%= data[i].img %>" videoUrl="<%== data[i].neirong %>" />
+					</div>
+					<% } %>
+					<% if(data[i].type == 7){ %>
+					<div class="msg msg-yuyin" onclick="bofangluyin(this)" data-src="<%= data[i].neirong %>" data-id="<%= data[i].id %>">
+						<p><span class="yuyintishi">【语音】</span><%= data[i].luyinshichang %>秒</p>
+						<img class="bofangzhong" src="img/bofangzhong.png"/>
+					</div>
+					<% } %>
+					
+				</div>
+				<% if(data[i].member_id==member_id){ %>
+				<a onclick="msxGerenzhuye(<%= member_id %>)" class="avatar" ><img src="<%= member_avatar %>" /></a>
+				<% } %>
+				
+			</li>
+			<li class="time"><span><%= data[i].send_time %></span></li>
+			
+			<% } %>
+			<%if(hehe==1){%>
+				<img style="display: none;" src="img/icon-search.png" onload="hehe()"/>
+			<%}%>
+			</script>
+			
+			<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/danliao.js" type="text/javascript" charset="utf-8"></script>
+			
+			<style type="text/css">
+				#luyinzhong{
+					display: none;
+				}
+				.luyinanniu{
+					color: white;width: 50%;float: left;text-align: center;
+					font-size: 0.4rem;
+					height: 1rem;
+					line-height: 1rem;
+					
+				}
+			</style>
+			<!--录音面板-->
+			<div id="luyinzhong" class="" style="position: fixed;top: 0;right: 0;bottom: 0;left: 0;margin: auto;width: 4rem;height: 4rem;background-color: white;border-radius: 10px;z-index: 2005;">
+				<div class="" style="text-align: center;font-size: 0.5rem;margin-top: 0.2rem;">
+					正在录音
+				</div>
+				<div class="" style="width: 2rem;text-align: center;margin: 0 auto;">
+		          <img style="width: 100%;" src="img/luyin.gif"/>
+		        </div>
+		        <div class="" style="position: absolute;bottom: 0;width: 100%;">
+		        	<div tapmode="" onclick="fasongluyin()" class="luyinanniu" style="background-color: #1970ad;border-radius: 0 0 0 10px;">
+		        		发送
+		        	</div>
+		        	<div tapmode="" onclick="quxiaoluyin()" class="luyinanniu" style="background-color: #ce7043;border-radius: 0 0 10px 0;">
+		        		取消
+		        	</div>
+		        </div>
+			</div>
+			
+			<!--//录音面板-->
+			
+
+			<!-- //微聊底部功能面板 -->
+			<div class="wc__footTool-panel">
+				<!-- 输入框模块 -->
+				<div class="wc__editor-panel wc__borT flexbox">
+					<i tapmode="" onclick="dakailuyin()" class="btn-yuyin" style="margin-left: 0;height: .7rem;width: .7rem;"></i>
+					<div class="wrap-editor flex1"><div class="editor J__wcEditor" contenteditable="true" style="-webkit-user-select:auto;"></div></div>
+					<i tapmode="" class="btn btn-emotion"></i>
+					<i tapmode="" class="btn btn-choose"></i>
+					<button tapmode="" class="btn-submit J__wchatSubmit">发送</button>
+				</div>
+
+				<!-- 表情、选择模块 -->
+				<div class="wc__choose-panel wc__borT" style="display: none;">
+					<!-- 表情区域 -->
+					<div class="wrap-emotion" style="display: none;">
+						<div class="emotion__cells flexbox flex__direction-column">
+							<div class="emotion__cells-swiper flex1" id="J__swiperEmotion">
+								<div class="swiper-container">
+									<div class="swiper-wrapper"></div>
+									<div class="pagination-emotion"></div>
+								</div>
+							</div>
+							<div class="emotion__cells-footer" id="J__emotionFootTab">
+								<ul class="clearfix">
+									<li class="swiperTmpl cur" tmpl="swiper__tmpl-emotion01"><img src="img/emotion/face01/face-lbl.png" alt=""></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- 选择区域 -->
+					<div class="wrap-choose" style="display: none;">
+						<div class="choose__cells">
+							<ul class="clearfix">
+								<li tapmode="" onclick="k('tmpl/product_list2.html?im=1','product_list2')"><a class="J__wchatWj" href="javascript:;"><span class="img"><img src="img/wchat/baobei.png" /></span><em>宝贝</em></a></li>
+								<li tapmode="" onclick="dakaixiangji()"><a class="J__wchatZp" href="javascript:;"><span class="img"><img style="opacity:0.5;" src="img/wchat/xiangji.png" /><!--<input type="file" accept="image/*" />--></span><em>拍照</em></a></li>
+								<li tapmode="" onclick="dakaixiangce()"><a class="J__wchatZp" href="javascript:;"><span class="img"><img src="img/wchat/icon__choose-zp.png" /><!--<input type="file" accept="image/*" />--></span><em>照片</em></a></li>
+								<li tapmode="" onclick="dakailuyin()"><a class="J__wchatSp" href="javascript:;"><span class="img"><img src="img/wchat/luyin.png" /><!--<input type="file" accept="video/*" />--></span><em>录音</em></a></li>
+								<li tapmode="" onclick="dakaiduanshipin()"><a class="J__wchatSp" href="javascript:;"><span class="img"><img src="img/wchat/icon__choose-sp.png" /><!--<input type="file" accept="video/*" />--></span><em>短视频</em></a></li>
+								<li tapmode=""><a class="J__wchatHb" href="javascript:;"><span class="img"><img src="img/wchat/icon__choose-ds.png" /></span><em>打赏</em></a></li>
+								<li tapmode="" onclick="dakaiweizhi()"><a class="J__wchatSc" href="javascript:;"><span class="img"><img style="opacity: 0.5;" src="img/wchat/weizhi.png" /></span><em>位置</em></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+	<!-- …… 图片预览弹窗.Start -->
+	<div class="wc__popup-imgPreview" style="display: none;">
+		<div class="swiper-container J__swiperImgPreview">
+			<div class="swiper-wrapper"></div>
+			<!-- <div class="swiper-pagination pagination-imgPreview"></div> -->
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+	</script>
+	<!-- …… 图片预览弹窗.End -->
+
+	<!-- …… 视频预览弹窗.Start -->
+	<div class="wc__popup-videoPreview" style="display: none;">
+		<i class="wc__videoClose"></i>
+		<video id="J__videoPreview" width="100%" height="100%" controls="controls" x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline preload="auto"></video>
+	</div>
+	<script type="text/javascript">
+		var video = document.getElementById("J__videoPreview");
+		$("#J__chatMsgList li").on("click", ".video", function(){
+			video.src = $(this).find("img").attr("videoUrl");
+			$(".wc__popup-videoPreview").show();
+			if(video.paused){
+				video.play();
+			}else{
+				video.pause();
+			}
+		});
+		video.addEventListener("ended", function(){
+			video.currentTime = 0;
+		}, false);
+		// 关闭预览
+		$(".wc__popup-videoPreview").on("click", ".wc__videoClose", function(){
+			$(".wc__popup-videoPreview").hide();
+			video.currentTime = 0;
+			video.pause();
+		});
+
+		// 进入全屏、退出全屏
+		video.addEventListener("x5videoenterfullscreen", function(){
+			console.log("进入全屏");
+		}, false);
+		video.addEventListener("x5videoexitfullscreen", function(){
+			$(".wc__popup-videoPreview .wc__videoClose").trigger("click");
+		}, false)
+	</script>
+	<!-- …… 视频预览弹窗.End -->
+
+	<!-- …… 表情模板.Start -->
+	<!-- //表情 -->
+	<div class="swiper__tmpl-emotion01" style="display: none;">
+		<div class="swiper-slide">
+			<div class="face-list face__sm-list">
+				<span><img class="face" src="img/emotion/face01/0.png" /></span>
+				<span><img class="face" src="img/emotion/face01/1.png" /></span>
+				<span><img class="face" src="img/emotion/face01/2.png" /></span>
+				<span><img class="face" src="img/emotion/face01/3.png" /></span>
+				<span><img class="face" src="img/emotion/face01/4.png" /></span>
+				<span><img class="face" src="img/emotion/face01/5.png" /></span>
+				<span><img class="face" src="img/emotion/face01/6.png" /></span>
+				
+				<span><img class="face" src="img/emotion/face01/7.png" /></span>
+				<span><img class="face" src="img/emotion/face01/8.png" /></span>
+				<span><img class="face" src="img/emotion/face01/9.png" /></span>
+				<span><img class="face" src="img/emotion/face01/10.png" /></span>
+				<span><img class="face" src="img/emotion/face01/11.png" /></span>
+				<span><img class="face" src="img/emotion/face01/12.png" /></span>
+				<span><img class="face" src="img/emotion/face01/13.png" /></span>
+				
+				<span><img class="face" src="img/emotion/face01/14.png" /></span>
+				<span><img class="face" src="img/emotion/face01/15.png" /></span>
+				<span><img class="face" src="img/emotion/face01/16.png" /></span>
+				<span><img class="face" src="img/emotion/face01/17.png" /></span>
+				<span><img class="face" src="img/emotion/face01/18.png" /></span>
+				<span><img class="face" src="img/emotion/face01/19.png" /></span>
+				<span><img class="del" src="img/wchat/icon__emotion-del.png" /></span>
+			</div>
+		</div>
+		<div class="swiper-slide">
+			<div class="face-list face__sm-list">
+				<span><img class="face" src="img/emotion/face01/20.png" /></span>
+				<span><img class="face" src="img/emotion/face01/21.png" /></span>
+				<span><img class="face" src="img/emotion/face01/22.png" /></span>
+				<span><img class="face" src="img/emotion/face01/23.png" /></span>
+				<span><img class="face" src="img/emotion/face01/24.png" /></span>
+				<span><img class="face" src="img/emotion/face01/25.png" /></span>
+				<span><img class="face" src="img/emotion/face01/26.png" /></span>
+				
+				<span><img class="face" src="img/emotion/face01/27.png" /></span>
+				<span><img class="face" src="img/emotion/face01/28.png" /></span>
+				<span><img class="face" src="img/emotion/face01/29.png" /></span>
+				<span><img class="face" src="img/emotion/face01/30.png" /></span>
+				<span><img class="face" src="img/emotion/face01/31.png" /></span>
+				<span><img class="face" src="img/emotion/face01/32.png" /></span>
+				<span><img class="face" src="img/emotion/face01/33.png" /></span>
+				
+				<span><img class="face" src="img/emotion/face01/34.png" /></span>
+				<span><img class="face" src="img/emotion/face01/35.png" /></span>
+				<span><img class="face" src="img/emotion/face01/36.png" /></span>
+				<span><img class="face" src="img/emotion/face01/37.png" /></span>
+				<span><img class="face" src="img/emotion/face01/38.png" /></span>
+				<span><img class="face" src="img/emotion/face01/39.png" /></span>
+				<span><img class="del" src="img/wchat/icon__emotion-del.png" /></span>
+			</div>
+		</div>
+		
+	
+	<script type="text/javascript">
+		var emotionSwiper;
+		function setEmotionSwiper(tmpl){
+			var _tmpl = tmpl ? tmpl : $("#J__emotionFootTab ul li.cur").attr("tmpl");
+			$("#J__swiperEmotion .swiper-container").attr("id", _tmpl);
+			$("#J__swiperEmotion .swiper-wrapper").html($("." + _tmpl).html());
+
+			emotionSwiper = new Swiper('#' + _tmpl, {
+				pagination: '.pagination-emotion',
+				paginationClickable: true
+			});
+		}
+		// 点击切换表情
+		$("#J__emotionFootTab").on("click", "ul li.swiperTmpl", function(){
+			// 先销毁swiper
+			emotionSwiper && emotionSwiper.destroy(true, true);
+			var _tmpl = $(this).attr("tmpl");
+			$(this).addClass("cur").siblings().removeClass("cur");
+
+			setEmotionSwiper(_tmpl);
+		});
+	</script>
+	<!-- …… 表情模板.End -->
+
+	<!-- …… 红包弹窗模板.Start -->
+	<div class="wc__choosePanel-tmpl">
+		<!-- //红包模板.begin -->
+		<div id="J__popupTmpl-Hongbao" style="display:none;">
+			<div class="wc__popupTmpl tmpl-hongbao">
+				<i class="wc-xclose"></i>
+				<ul class="clearfix">
+					<li class="item flexbox">
+						<label class="txt">打赏金额</label><input onchange="shezhihongbaojine(this)" id="hongbaojine" class="ipt-txt flex1" type="number" name="hbAmount" placeholder="0.00" /><em class="unit">元</em>
+					</li>
+
+				</ul>
+			</div>
+			<div onclick="jianchahongbao()" class="popui__panel-btn">
+				<span class="btn" data-index="0" style="background:#ffba00;color:#fff;font-size:18px;">打赏</span>
+			</div>
+		</div>
+		<!-- //红包模板.end -->
+	</div>
+	<script type="text/javascript">
+		/* ...红包事件.start */
+		$(".J__wchatHb").on("click", function(){
+			
+			hongbaojine = 0;
+			hidegongnengkuang();
+			
+			bpidx = wcPop({
+				skin: 'ios',
+				content: $("#J__popupTmpl-Hongbao").html(),
+				style: 'background-color: #f3f3f3; max-width: 320px; width: 90%;',
+				shadeClose: false,
+
+				
+			});
+		});
+		/* ...红包事件.end */
+
+		// ...关闭
+		$("body").on("click", ".wc__popupTmpl .wc-xclose", function(){
+			wcPop.close();
+		});
+	</script>
+	<!-- …… 红包弹窗模板.End -->
+
+	
+	<script type="text/javascript">
+		/** __公共函数 */
+		$(function(){
+			// 禁止长按弹出系统菜单
+			$(".wechat__panel").on("contextmenu", function(e){
+				e.preventDefault();
+			});
+		});
+		
+		/** __自定函数 */
+		$(function(){
+			// ...滚动聊天区底部
+			function wchat_ToBottom(){
+				$(".wc__chatMsg-panel").animate({scrollTop: $("#J__chatMsgList").height()}, 0);
+			}
+
+			// ...点击聊天面板区域
+			$(document).on("click", ".wc__chatMsg-panel", function(e){
+				var _tapMenu = $(".wc__chatTapMenu");
+				if(_tapMenu.length && e.target != _tapMenu && !$.contains(_tapMenu[0], e.target)){
+					// 关闭长按菜单
+					_tapMenu.hide();
+					$(".wc__chatMsg-panel").find("li .msg").removeClass("taped");
+				}
+				$(".wc__choose-panel").hide();
+			});
+
+			// ...表情、选择区切换
+			$(".wc__editor-panel").on("tap", ".btn", function(){
+				var that = $(this);
+				$(".wc__choose-panel").show();
+				if (that.hasClass("btn-emotion")) {
+					$(".wc__choose-panel .wrap-emotion").show();
+					$(".wc__choose-panel .wrap-choose").hide();
+					// 初始化swiper表情
+					!emotionSwiper && $("#J__emotionFootTab ul li.cur").trigger("click");
+				} else if (that.hasClass("btn-choose")) {
+					$(".wc__choose-panel .wrap-emotion").hide();
+					$(".wc__choose-panel .wrap-choose").show();
+				}
+				wchat_ToBottom();
+			});
+
+			// ...处理编辑器信息
+			var $editor = $(".J__wcEditor"), _editor = $editor[0];
+			function surrounds(){
+				setTimeout(function () { //chrome
+					var sel = window.getSelection();
+					var anchorNode = sel.anchorNode;
+					if (!anchorNode) return;
+					if (sel.anchorNode === _editor ||
+						(sel.anchorNode.nodeType === 3 && sel.anchorNode.parentNode === _editor)) {
+						
+						var range = sel.getRangeAt(0);
+						var p = document.createElement("p");
+						range.surroundContents(p);
+						range.selectNodeContents(p);
+						range.insertNode(document.createElement("br")); //chrome
+						sel.collapse(p, 0);
+						
+						(function clearBr() {
+							var elems = [].slice.call(_editor.children);
+							for (var i = 0, len = elems.length; i < len; i++) {
+								var el = elems[i];
+								if (el.tagName.toLowerCase() == "br") {
+									_editor.removeChild(el);
+								}
+							}
+							elems.length = 0;
+						})();
+					}
+				}, 100);
+			}
+			// 格式化编辑器包含标签
+			_editor.addEventListener("click", function () {
+				$(".wc__choose-panel").hide();
+			}, true);
+			_editor.addEventListener("focus", function(){
+				if( $('.wc__choose-panel').is(':hidden') && wuli_gao > 2000 ){
+					$('.wc__footTool-panel').addClass('zuixia');
+				}
+				surrounds();
+			}, true);
+			_editor.addEventListener("blur", function(){
+				$('.wc__footTool-panel').removeClass('zuixia');
+			}, true);
+			_editor.addEventListener("input", function(){
+				surrounds();
+			}, false);
+			// 点击表情
+			$("#J__swiperEmotion").off("click", ".face-list span img")
+			$("#J__swiperEmotion").on("click", ".face-list span img", function(){
+				
+				
+				var that = $(this), range;
+
+				if(that.hasClass("face")){ //小表情
+					var img = that[0].cloneNode(true);
+					_editor.focus();
+					_editor.blur(); //输入表情时禁止输入法
+
+					setTimeout(function(){
+						if(document.selection && document.selection.createRange){
+							document.selection.createRange().pasteHTML(img);
+						}else if(window.getSelection && window.getSelection().getRangeAt){
+							range = window.getSelection().getRangeAt(0);
+							range.insertNode(img);
+							range.collapse(false);
+
+							var sel = window.getSelection();
+							sel.removeAllRanges();
+							sel.addRange(range);
+						}
+					}, 10);
+				}else if(that.hasClass("del")){ //删除
+					_editor.focus();
+					_editor.blur(); //输入表情时禁止输入法
+
+					setTimeout(function(){
+						range = window.getSelection().getRangeAt(0);
+						range.collapse(false);
+
+						var sel = window.getSelection();
+						sel.removeAllRanges();
+						sel.addRange(range);
+						document.execCommand("delete");
+					}, 10);
+				} else if(that.hasClass("lg-face")){ //大表情
+					var _img = that.parent().html();
+					var _tpl = [
+						'<li class="me">\
+							<div class="content">\
+								<div class="msg lgface">'+ _img + '</div>\
+							</div>\
+							<a class="avatar" href="微聊(好友主页).html"><img src="img/uimg/u__chat-img14.jpg" /></a>\
+						</li>'
+					].join("");
+					$chatMsgList.append(_tpl);
+
+					wchat_ToBottom();
+				}
+			});
+			// 发送信息
+			var $chatMsgList = $("#J__chatMsgList");
+			function isEmpty(){
+				var html = $editor.html();
+				html = html.replace(/<br[\s\/]{0,2}>/ig, "\r\n");
+				html = html.replace(/<[^img].*?>/ig, "");
+				html = html.replace(/&nbsp;/ig, "");
+				return html.replace(/\r\n|\n|\r/, "").replace(/(?:^[ \t\n\r]+)|(?:[ \t\n\r]+$)/g, "") == "";
+			}
+			$(".J__wchatSubmit").on("tap", function(){
+				// 判断内容是否为空
+				if(isEmpty()) return;
+
+				var html = $editor.html();
+				var reg = /(http:\/\/|https:\/\/)((\w|=|\?|\.|\/|&|-)+)/g;
+				html = html.replace(reg, "<a href='$1$2'>$1$2</a>");
+				var msgTpl = [
+					'<li class="me">\
+						<div class="content">\
+							<div class="msg">'+ html +'</div>\
+						</div>\
+						<a class="avatar"><img src="'+member_avatar+'" /></a>\
+					</li>'
+				].join("");
+				$chatMsgList.append(msgTpl);
+
+				// 清空聊天框并获取焦点（处理输入法和表情 - 聚焦）
+				if(!$(".wc__choose-panel").is(":hidden")){
+					$editor.html("");
+				}else{
+					$editor.html("");
+				}
+				
+				$('.wc__choose-panel').hide();
+				
+				wchat_ToBottom();
+				
+				fasong(html,1);
+				
+			});
+		});
+	</script>
+	
+</body>
+</html>
+<script type="text/javascript">
+	
+
+
+var jishiqi = 0;
+var xunhuanjishiqi = 0;
+diaoxianchonglian();
+function diaoxianchonglian(){//掉线重连
+	setInterval(function(){
+		xunhuanjishiqi = xunhuanjishiqi + 1;
+		if( xunhuanjishiqi - jishiqi > 2 ){
+			jishiqi = xunhuanjishiqi;
+			lunxun();
+		}
+	},2000);
+}
+
+/*
+ * 轮询
+ * */
+function lunxun(){
+	
+	var shuju	=	{'member_id':member_id,'to_member_id':to_member_id};
+		var dizhi	=	ApiUrl + '/index.php?act=im&op=lunxun';
+		var func	=	'lunxunchuli';
+		var op		=	{'dizhi':dizhi,'func':func,'shuju':shuju};
+		ajax(op);
+}
+
+function lunxunchuli(t){
+	jishiqi = jishiqi + 1;
+	xuanranliebiao(t);
+	setTimeout(function() {
+		lunxun();
+	}, 1000);
+}
+
+
+function ios_tapmode(){
+	api.parseTapmode();
+}
+ios_tapmode();
+</script>

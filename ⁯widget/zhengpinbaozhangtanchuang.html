@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>百姓商城</title>
+		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+				margin: 0;
+				width: 0%;
+				background-color: transparent;
+				overflow: hidden;
+			}
+			#img-box{
+				text-align: center;
+			}
+			#img{
+					margin-top: 50%;
+					text-align: center;
+				    width: 80%;
+				    border-radius: 10px;
+			}
+			#guanbi-box{
+				text-align: center;
+			}
+			#guanbi{
+				background-color: #f56e20;
+				color: white;
+				border-radius: 4px;
+				text-align: center;
+				display: inline-block;
+				margin-top: 1rem;
+
+				    width: 4rem;
+				    height: 2rem;
+				    line-height: 2rem;
+				    
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="img-box">
+			<img onclick="k('mokuai1/zhengpinbaozhang.html','zhengpinbaozhang')" onload="xianshichuangkou()" id="img" src=""/>
+			</div>
+			<div id="guanbi-box">
+				
+			<div onclick="guanbi()" id="guanbi">
+				关闭
+			</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	session('zhengpinbaozhangtanchuang','1');
+	apiready = function(){
+		api.setFrameAttr({
+		    hidden: true
+		});
+		_init();
+	}
+	
+//获取接口参数
+function _init(){
+	var shuju	=	{};
+	var dizhi	=	ApiUrl + '/index.php?act=gongneng&op=shangpinbaozhangtanchuang';
+	var func	=	'_handle';
+	var op		=	{'dizhi':dizhi,'func':func,'shuju':shuju};
+	
+	ajax(op);
+	ol(); 
+}
+
+//处理返回数据
+function _handle(t){
+		$('#img').attr('src',t.list);
+}
+
+function guanbi(){
+	api.closeFrame();
+}
+
+function xianshichuangkou(){
+	$('html,body').css({ 'width':'100%','background-color':'rgba(0,0,0,0.4)' });
+	api.setFrameAttr({
+	    hidden: false
+	});
+}
+	
+</script>

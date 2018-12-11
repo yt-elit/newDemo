@@ -1,0 +1,38 @@
+#fenlei-box{
+	margin: 5px 7px 0px 7px;
+	float: left;
+}
+.fenlei-item{
+	float: left;
+	width: 51px;
+	height: 58px;
+	padding: 6px 0px;
+}
+.fenlei-item-mig{
+	width: 51px;
+	height: 37px;
+	text-align: center;
+}
+.fenlei-item img{
+	width:37px;
+	height: 100%;
+}
+
+.fenlei-item p{
+	text-align: center;
+	font-size: 9px;
+	margin-top: 2px;
+}
+
+.fenlei-item.active p{
+	text-align: center;
+	font-size: 9px;
+	margin-top: 2px;
+	color: red;
+	background-color: rgba(255,255,0,1);
+	border: 1px solid rgba(178,135,80,1);
+	border-radius: 2px;
+}
+.zhongjianxiang.active{
+	color: #00BCD4 !important;
+}

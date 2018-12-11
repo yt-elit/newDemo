@@ -1,0 +1,62 @@
+#fanhuianniu{
+	width: 320px;
+	position: fixed;
+	bottom: 12px;
+	left: 20px;
+	margin: 0px auto auto 0px;
+}
+#fanhuianniu img{
+	width: 80px;
+}
+.fanhuianniu-left{
+	position: absolute;
+    width: 40px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.fanhuianniu-right{
+	position: absolute;
+    width: 40px;
+    height: 100%;
+    top: 0;
+    left: 41px;
+}
+
+#dilan-box{
+	position: fixed;
+	bottom: 0;
+	z-index: 1000;
+}
+#dilan-mai{
+	position: fixed;
+	bottom: 4px;
+	left: 136px;
+	width: 48px;
+	height: 60px;
+	
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1000;
+	
+}
+.dilan-1.active,.dilan-2.active,.dilan-3.active,.dilan-4.active,.dilan-5.active{
+	color: rgb(14,104,234);
+}
+
+
+.sex-0{
+				background-color: #2fd296;
+			}
+			.sex-1{
+				background-color: rgba(76,211,233,1);
+			}
+			.sex-2{
+				background-color: pink;
+			}
+
+.dilan-mai2{
+	bottom: -42px!important;
+}

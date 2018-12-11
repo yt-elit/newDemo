@@ -1,0 +1,63 @@
+.lurulvqi label{
+	text-align: right;
+}
+
+.lurulvqi .mui-input-row label.zuizhonglurubianma{
+	color: red;
+	font-weight: bold;
+}
+.lurulvqi .mui-input-row label.youbian,.lurulvqi .mui-input-row label.zuizhonglurubianma{
+	width: 65%;
+}
+.dianjixuanze{
+	background: #f0ad4e;
+	color: white;
+	border-radius:3px ;
+	padding: 4px 8px;
+	margin-left: 14px;
+}
+
+.mui-input-group .mui-button-row{
+	height: 60px;
+}
+#querenquyu{
+	margin-top: 20px;
+}
+
+#chanpinxinghao{
+	position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+}
+
+.mui-input-group input.shurukuang{
+	text-align: right;
+    width: 74%;
+    margin: 0;
+    padding: 0;
+    height: initial;
+}
+#dianjixuanze{
+	font-size: 12px;
+	padding-left: 0px;
+}
+.dianjixuanze{
+	font-size: 14px;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear{
+	right: -10px;
+}
+.mui-input-group input.lianzhe{
+	width: 2.3rem;
+}
+.jianyanjigou{
+	background: #f0ad4e;
+	color: white;
+	border-radius:3px ;
+	padding: 4px 8px;
+	margin-left: 14px;
+}
+#fuchangjianyanriqi{
+	visibility: hidden;
+}

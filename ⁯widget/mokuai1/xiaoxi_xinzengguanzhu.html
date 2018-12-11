@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css" />
+
+		<title>新增关注</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			.guanzhu{
+				background-color: rgb(255, 0, 0);
+				color: white;
+			}
+			.yiguanzhu{
+				background-color: #eee;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar">
+
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container">
+
+				<div class="ele-container msx-header msx-header2">
+					<div class="element free-vessel" style="width: 320px; height: 38px; margin: 0px auto auto 0px; opacity: 1;border-bottom: solid 0.05rem #EEE;">
+						<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 11px;"><img src="images/arrow_left_b.png"></div>
+						<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 38px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 0px;"></div>
+						<div class="element text msx-header-title" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 15px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 130px; top: 6px;">新增关注</div>
+
+						<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 83px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; right: 10px; top: 0px;line-height: 38px!important;font-size: 12px;text-align: right;color: #e8ab21;">急卖通道</div>
+
+					</div>
+				</div>
+				
+				<div class="msx-header2-bottom">
+					
+				</div>
+				
+				<div id="list-box">
+					
+				</div>
+				
+				
+				<script type="text/html" id="list-tp">
+				<% for(var i=0;i<data.length;i++){ %>
+				<div class="xinzengguanzhu" style="border-bottom: 1px solid #ddd;">
+
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 54px; margin: 0px auto auto 0px; opacity: 1;">
+							<div onclick="msxGerenzhuye(<%= data[i].member_id %>)" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 34px; border-style: none; border-width: 0px; height: 33px; width: 33px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 14px; top: 10px;"><img src="<%= data[i].member_info.member_avatar %>"></div>
+							<div onclick="msxGerenzhuye(<%= data[i].member_id %>)" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 54px; top: 14px;"><%= data[i].member_info.member_nickname %>　关注了你</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(178, 178, 178); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 54px; top: 30px;"><%= data[i].add_time %></div>
+							<div class="element button <%if(data[i].is_guanzhu==1){%>yiguanzhu<%}else{%>guanzhu<%}%>" onclick="guanzhu(this)" data-type="<%= data[i].is_guanzhu %>" data-member-id="<%= data[i].member_info.member_id %>" style=" border-color: rgb(48, 145, 242); border-radius: 4px; border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 63px; position: absolute; left: 243px; top: 15px;"><%if(data[i].is_guanzhu==1){%>已关注<%}else{%>关注<%}%></div>
+						</div>
+					</div>
+
+				</div>
+				<% } %>
+				</script>
+
+				
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/xiaoxi_xinzengguanzhu.js" type="text/javascript" charset="utf-8"></script>

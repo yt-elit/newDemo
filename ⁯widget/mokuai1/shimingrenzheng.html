@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://kmhd.kemeihudong.com/baixingshangcheng/shezhi.htm -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui2.css" />
+		<link rel="stylesheet" type="text/css" href="../css/chajian/picker.css" />
+		<link rel="stylesheet" type="text/css" href="../css/chajian/poppicker.css" />
+
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.mui-views,
+			.mui-view,
+			.mui-pages,
+			.mui-page,
+			.mui-page-content {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #efeff4;
+			}
+			
+			.mui-pages {
+				top: 46px;
+				height: auto;
+			}
+			
+			.mui-scroll-wrapper,
+			.mui-scroll {
+				background-color: #efeff4;
+			}
+			
+			.mui-page.mui-transitioning {
+				-webkit-transition: -webkit-transform 300ms ease;
+				transition: transform 300ms ease;
+			}
+			
+			.mui-page-left {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			
+			.mui-ios .mui-page-left {
+				-webkit-transform: translate3d(-20%, 0, 0);
+				transform: translate3d(-20%, 0, 0);
+			}
+			
+			.mui-navbar {
+				position: fixed;
+				right: 0;
+				left: 0;
+				z-index: 10;
+				height: 44px;
+				background-color: #f7f7f8;
+			}
+			
+			.mui-navbar .mui-bar {
+				position: absolute;
+				background: transparent;
+				text-align: center;
+			}
+			
+			.mui-android .mui-navbar-inner.mui-navbar-left {
+				opacity: 0;
+			}
+			
+			.mui-ios .mui-navbar-left .mui-left,
+			.mui-ios .mui-navbar-left .mui-center,
+			.mui-ios .mui-navbar-left .mui-right {
+				opacity: 0;
+			}
+			
+			.mui-navbar .mui-btn-nav {
+				-webkit-transition: none;
+				transition: none;
+				-webkit-transition-duration: .0s;
+				transition-duration: .0s;
+			}
+			
+			.mui-navbar .mui-bar .mui-title {
+				display: inline-block;
+				width: auto;
+			}
+			
+			.mui-page-shadow {
+				position: absolute;
+				right: 100%;
+				top: 0;
+				width: 16px;
+				height: 100%;
+				z-index: -1;
+				content: '';
+			}
+			
+			.mui-page-shadow {
+				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+			}
+			
+			.mui-navbar-inner.mui-transitioning,
+			.mui-navbar-inner .mui-transitioning {
+				-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+				transition: opacity 300ms ease, transform 300ms ease;
+			}
+			
+			.mui-page {
+				display: none;
+			}
+			
+			.mui-pages .mui-page {
+				display: block;
+			}
+			
+			.mui-page .mui-table-view:first-child {
+				margin-top: 15px;
+			}
+			
+			.mui-page .mui-table-view:last-child {
+				margin-bottom: 30px;
+			}
+			
+			.mui-table-view {
+				margin-top: 20px;
+			}
+			
+			.mui-table-view span.mui-pull-right {
+				color: #999;
+			}
+			
+			.mui-table-view-divider {
+				background-color: #efeff4;
+				font-size: 14px;
+			}
+			
+			.mui-table-view-divider:before,
+			.mui-table-view-divider:after {
+				height: 0;
+			}
+			
+			.head {
+				height: 40px;
+			}
+			
+			#head {
+				line-height: 40px;
+			}
+			
+			.head-img {
+				width: 40px;
+				height: 40px;
+			}
+			
+			#head-img1 {
+				position: absolute;
+				bottom: 10px;
+				right: 40px;
+				width: 40px;
+				height: 40px;
+			}
+			
+			.update {
+				font-style: normal;
+				color: #999999;
+				margin-right: -25px;
+				font-size: 15px
+			}
+			
+			.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			
+			.mui-ios .mui-navbar .mui-bar .mui-title {
+				position: static;
+			}
+		</style>
+	</head>
+
+	<body >
+		<!--页面主结构开始-->
+		<div class="mui-content">
+				<div class="mui-navbar">
+					<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center" style="">
+						<button onclick="msxBack()" type="button" class="mui-left mui-btn  mui-btn-link mui-btn-nav mui-pull-left" style="opacity: 0.6;">
+					<span class="mui-icon mui-icon-left-nav" style="color: black;"></span>
+				</button>
+						<h1 class="mui-center mui-title">实名认证</h1>
+					</div>
+				</div>
+					
+					<style type="text/css">
+						.tupian{
+							border: 1px solid #777;
+							width: 14rem;
+							height: 8rem;
+							margin: 1rem auto 1rem auto;
+							border-radius: 4px;
+							text-align: center;
+							line-height: 8rem;
+							position: relative;
+							color: cornflowerblue;
+						}
+						.tupian input{
+							position: absolute;
+							left: 0;
+						    top: 0;
+						    height: 8rem;
+						    opacity: 0;
+						    -webkit-opacity: 0;
+						}
+						.tupian img{
+							position: absolute;
+							left: 0;
+						    top: 0;
+						    height: 8rem;
+						    width: 100%;
+						    opacity: 0;
+						}
+						.tishi{
+							text-align: center;
+							margin: 10px auto 10px auto;
+							color: red;
+							font-weight: bold;
+							display: none;
+						}
+					</style>
+
+						
+									<form class="mui-input-group" style="padding-top: 44px;overflow: hidden;">
+										<div class="mui-row">
+											<div class="tishi">
+												正在审核
+											</div>
+										</div>
+										<div class="mui-input-row">
+											<label>姓名</label>
+											<input type="text" id="xingming" placeholder="请输入姓名">
+										</div>
+										<div class="mui-input-row">
+											<label>身份证号</label>
+											<input type="text" id="shenfenzhenghao" class="mui-input-clear" placeholder="请输入身份证号" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+										</div>
+										<div class="tupian">
+											<span>点击上传身份证正面</span>
+											<img id="zhengmian" src=""/>
+											<input type="file" name="shenfenzhengzhengmian" id="shenfenzhengzhengmian" value="" accept="image/*" onchange="xuanzezhengmian(this)" />
+										</div>
+										<div class="tupian">
+											<span>点击上传身份证反面</span>
+											<img id="fanmian" src=""/>
+											<input type="file" name="shenfenzhengfanmian" id="shenfenzhengfanmian" value="" accept="image/*" onchange="xuanzefanmian(this)" />
+										</div>
+										<div class="tupian">
+											<span>点击上传个人照片</span>
+											<img id="geren" src=""/>
+											<input type="file" name="gerenzhaopian" id="gerenzhaopian" value="" accept="image/*" onchange="xuanzegeren(this)" />
+										</div>
+										
+										
+										
+									
+
+										<div class="mui-input-row mui-plus-visible">
+											<label>Input</label>
+											<input type="text" class="mui-input-speech mui-input-clear" placeholder="语音输入" data-input-clear="6" data-input-speech="6"><span class="mui-icon mui-icon-clear mui-hidden"></span><span class="mui-icon mui-icon-speech"></span>
+										</div>
+										<div class="mui-button-row" style="margin-bottom: 50px;">
+											<button style="display: none;" onclick="tijiao()" id="tijiaoanniu" type="button" class="mui-btn mui-btn-primary" onclick="return false;">提交</button>&nbsp;&nbsp;
+											<button onclick="msxBack()" type="button" class="mui-btn mui-btn-danger" onclick="return false;">取消</button>
+										</div>
+									</form>
+									
+
+								
+							
+
+			</div>
+		</div>
+		<!--页面主结构结束-->
+
+	</body>
+
+</html>
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/picker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/poppicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/shangchuanwenjian/ajaxupload.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/shimingrenzheng.js" type="text/javascript" charset="utf-8"></script>

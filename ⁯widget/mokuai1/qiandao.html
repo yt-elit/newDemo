@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css" />
+		<title>签到</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			.qianhong{
+				color: rgb(245, 53, 48);
+			}
+			.qianhuang{
+				color: rgb(197,150,2);
+			}
+			*{
+				letter-spacing:1px;
+			}
+		</style>
+		
+	</head>
+
+	<body class="app width-marketing-bar" style="background-color: rgba(237,233,232,1);">
+
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container" style="padding-bottom: 0px;">
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+				<div id="page10011" class="page zShow" data-router="page10011" style="background-color: rgba(237,233,232,1);">
+					
+					
+					
+					<div class="ele-container msx-header">
+						<div class="element free-vessel" style="width: 320px; height: 38px; margin: 0px auto auto 0px; opacity: 1;border-bottom: solid 0.05rem #ddd;background-color: transparent;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 11px;"><img src="images/arrow_left_b.png"></div>
+							<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 38px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 0px;"></div>
+							<div class="element text msx-header-title" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 15px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 130px; top: 6px;">签到</div>
+							
+							<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 83px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; right: 10px; top: 0px;line-height: 38px!important;font-size: 12px;text-align: right;color: #e8ab21;">急卖通道</div>
+							
+						</div>
+					</div>
+					
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 122px; margin: -1px auto auto 0px; opacity: 1;">
+							<div  class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 12px; width: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 13px; top: 7px;"><a href="#picture"><img src="ziyuan/file_5baed4430e652.png"></a></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 10px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 27px; top: 1px;"><a href="#picture">规则</a></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 19px; width: 121px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 100px; top: 0.540871px;"><img src="ziyuan/file_5baed50a87196.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 0); font-size: 11px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 110px; top: -1px;letter-spacing: 0;">开通VIP签到奖励更多</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 21px; width: 33px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 284px; top: 1px;">
+								<div onclick="qiandaotixing(this)" id="qiandaotixing" class="mui-switch mui-switch-mini" style="transform: scale(0.7);margin-left: -6px;margin-top: -4px;-webkit-transform: scale(0.6);">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 10px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 240px; top: 0px;">签到提醒</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 31px; width: 223px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 41px; top: 40px;"><img src="ziyuan/file_5baed6d8b62c3.png"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 32px; width: 46px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 260px; top: 43px;"><img src="ziyuan/file_5baed71b45085.png"></div>
+							<div onclick="k('jifenshangpinliebiao.html','jifenshangpinliebiao')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 22px; width: 287px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 20px; top: 83px;"><img src="ziyuan/file_5baed7a9d0dba.png"></div>
+						</div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 172px; margin: 0px auto auto 0px; opacity: 1;background-color: white;">
+							<div onclick="qiandao()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 39px; width: 206px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 57px; top: 7px;"><img src="ziyuan/file_5baed8b4be121.png"></div>
+							<div id="dianjiqiandao" onclick="qiandao()" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 22px; font-weight: initial; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 116px; top: 13px;width:100px;">点击签到</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 129px; top: 53px;">您已连续签到</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 22px; font-weight: bold; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 144px; top: 69px;"><span id="lianxuqiandaotianshu">0</span>天</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 70px; top: 98px;">在签<span id="zaiqiantianshu">0</span>天即可获得<span id="ewaijinbi">0</span>个金币奖励</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 114px;"><img src="ziyuan/file_5baedae360f4e.png" class="jinbi-1"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 3px; width: 17px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 38px; top: 127px;"><img src="ziyuan/file_5baedae2754c8.png" class="tiao-2"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 55px; top: 114px;"><img src="ziyuan/file_5baedae360f4e.png" class="jinbi-2"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 3px; width: 17px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 82px; top: 127px;"><img src="ziyuan/file_5baedae2754c8.png" class="tiao-3"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 99px; top: 114px;"><img src="ziyuan/file_5baedae360f4e.png" class="jinbi-3"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 3px; width: 17px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 126px; top: 127px;"><img src="ziyuan/file_5baedae2754c8.png" class="tiao-4"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 143px; top: 114px;"><img src="ziyuan/file_5baedae360f4e.png" class="jinbi-4"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 3px; width: 17px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 170px; top: 127px;"><img src="ziyuan/file_5baedae2754c8.png" class="tiao-5"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 187px; top: 114px;"><img src="ziyuan/file_5baedae360f4e.png" class="jinbi-5"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 3px; width: 17px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 214px; top: 127px;"><img src="ziyuan/file_5baedae2754c8.png" class="tiao-6"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 231px; top: 114px;"><img src="ziyuan/file_5baedae360f4e.png" class="jinbi-6"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 3px; width: 17px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 258px; top: 127px;"><img src="ziyuan/file_5baedae2754c8.png" class="tiao-7"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 275px; top: 114px;"><img src="ziyuan/file_5baedae360f4e.png" class="jinbi-7"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 21px; width: 21px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 280px; top: 118px;"><img src="ziyuan/file_5baedae4cec61.png"></div>
+							<div class="element text wenzi-1" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(153, 153, 153); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 12px; top: 147px;">1天</div>
+							<div class="element text wenzi-2" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(153, 153, 153); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 58px; top: 147px;">2天</div>
+							<div class="element text wenzi-3" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(153, 153, 153); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 102px; top: 147px;">3天</div>
+							<div class="element text wenzi-4" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(153, 153, 153); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 148px; top: 147px;">4天</div>
+							<div class="element text wenzi-5" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(153, 153, 153); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 194px; top: 147px;">5天</div>
+							<div class="element text wenzi-6" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(153, 153, 153); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 237px; top: 147px;">6天</div>
+							<div class="element text wenzi-7" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(153, 153, 153); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 280px; top: 147px;">7天</div>
+						</div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 70px; margin: 0px auto auto 0px; opacity: 1;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 39px; width: 206px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 57px; top: 10px;"><img src="ziyuan/file_5baedf1c9835d.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 20px; height: 25px; line-height: 22px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 84px; top: 17px;">开通VIP签到翻倍</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(102, 102, 102); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 93px; top: 56px;">VIP签到<span class="qianhong">更快</span>获得<span class="qianhong">更多</span>礼品</div>
+						</div>
+					</div>
+					<div class="ele-container" style="margin-bottom: 20px;">
+						<div class="element free-vessel" style="width: 305px; height: 144px; margin: 0px 6px auto 8px; opacity: 1;border: 1px solid rgb(98,98,98);border-radius: 4px;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 52px; width: 157px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 68px; top: 6px;"><img src="ziyuan/file_5baedf0e2c970.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; font-size: 13px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 12px; top: 25px;">普通用户</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 13px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 243px; top: 32px;">VIP用户</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 13px; width: 19px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 241px; top: 18px;"><img src="ziyuan/file_5baedf12c3160.png"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 50px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 79px; top: 76px;"><img src="ziyuan/file_5baedf1173d41.png"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 50px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 195px; top: 76px;"><img src="ziyuan/file_5baedf103af3b.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 29px; top: 74px;"><span id="points_putongqiandao">0</span>金币/天</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 32px; top: 97px;">签到<span style="">7</span>天</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 40px; top: 120px;"><span id="points_putong7qiandao">0</span><span class="qianhuang">金币</span></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 216px; top: 75px;"><span style="color: red;" id="points_vipqiandao">0</span>金币/天</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 217px; top: 98px;">签到<span style="color: red;">7</span>天</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 11px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 216px; top: 120px;"><span id="points_vip7qiandao" style="color: red;">0</span><span class="qianhuang">金币</span></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 40px; width: 50px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 118px; top: 76px;"><img src="ziyuan/file_5baed71b45085.png"></div>
+							
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 8px; width: 4px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 51px; top: 87px;"><img src="ziyuan/file_5baedf139984b.png"></div>
+							
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 8px; width: 4px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 51px; top: 111px;"><img src="ziyuan/file_5baedf139984b.png"></div>
+							
+							
+							
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 8px; width: 4px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 234px; top: 87px;"><img src="ziyuan/file_5baedf139984b.png"></div>
+							
+							
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 8px; width: 4px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 234px; top: 111px;"><img src="ziyuan/file_5baedf139984b.png"></div>
+							
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+
+			</div>
+
+		</div>
+		
+		
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<div id="guize" style="padding: 20px;text-align: left;">
+					正在加载，请稍候。。。
+				</div>
+				
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/picker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/poppicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/qiandao.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<title>邀请好友</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			
+			.gao100{
+				height: auto !important;
+			}
+		</style>
+		<script type="text/javascript">
+			function yaoqinghaoyou(){
+				alert('邀请好友')
+			}
+			function lipinzhongxin(){
+				alert('去往礼品中心')
+			}
+		</script>
+	</head>
+
+	<body class="app width-marketing-bar" >
+
+		<div class="page-container-parent">
+			
+			<div class="ele-container msx-header">
+						<div class="element free-vessel" style="width: 320px; height: 38px; margin: 0px auto auto 0px; opacity: 1;border-bottom: solid 0.05rem #EEE;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 11px;"><img src="images/arrow_left_b.png"></div>
+							<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 38px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 0px;"></div>
+							<div class="element text msx-header-title" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 15px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 130px; top: 6px;">邀请好友</div>
+							
+							<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 83px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; right: 10px; top: 0px;line-height: 38px!important;font-size: 12px;text-align: right;color: #e8ab21;">急卖通道</div>
+							
+						</div>
+					</div>
+			<div id="page-container" class="page-container" style="position: relative;background-image: url(ziyuan/zhudongyaoqing.jpg);background-repeat: no-repeat;background-size: 100% auto;background-color: rgb(253,208,3);height: 100%;padding-bottom: 10px;">
+				
+				
+
+
+
+				<div class="ele-container">
+					<div class="element free-vessel" style="width: 320px;height: 261px;  margin: 0px auto auto 0px; opacity: 1;">
+						<div onclick="lipinzhongxin()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 36px; width: 66px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 246px; top: 66px;"><img src="https://cdn.jisuapp.cn/static/jisuapp_editor/images/zhichi-default.png"></div>
+						<div onclick="yaoqinghaoyou()" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 10px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 120px; top: 84px;">点击邀请好友</div>
+						
+					</div>
+				</div>
+				
+				
+				<div class="ele-container">
+					<div class="element free-vessel" style="width: 320px;height: initial;  margin: 0px auto auto 0px; opacity: 1;position: relative;">
+						
+						<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 10px; height: 75px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left;  left: 17px; top: 0px; width: 285px;text-align: justify;margin: 29px 19px 0px 19px; ">1.将当前页面分享给您未下载过[商城App]的好友，好友通过您分享的链接进入应用商店下载最新版[商城商城App],并进行微信/QQ登录(点击邀请链接的24小时内)后，您即可获得
+	积分;
+	(注:①分享到微信好友，好友下载App后须通过微信登录方可被认定为邀请成功;②分享到QQ好友、QQ空间，好友下载App后须通过QQ登录方可被认定为为邀请成功; )
+2.积分将于好友下载App并完成微信/QQ登录后十分钟内发放;
+3.积分适用于全平台商品(虚拟商品除外)，有效期为3天
+4.每位用户每天可邀请的新用户数量上限为5人，如发现用户存在违规行为(包括但不限于恶意刷券、套现等作弊行为)，我方有权将违规积分进行作废处理，并取消其“邀请赚积分的资格;
+5.我方可能对活动时间和活动规则作出调整，请注意活动页面相关说明;
+6.我方可在法律允许的范围内对本活动规则进行解释;
+						
+						</div>
+
+
+						
+						
+					</div>
+				</div>
+				
+				
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

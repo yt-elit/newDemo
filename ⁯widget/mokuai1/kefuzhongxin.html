@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>客服中心</title>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="ziyuan/mui.css" />
+		<style type="text/css">
+			body{
+				margin: 0;
+			}
+			.mui-table-view-cell:after{
+				background-color: white;
+			}
+			.remen-text{
+				font-size: 15px;
+			}
+			li{
+				background-color: white;
+			}
+			.list-box{
+				float: left;
+				display: block;
+			}
+			.dian{
+				    font-weight: bold;
+    margin-right: 5px;
+    color: rgb(72,195,255);
+			}
+			
+			.mui-navigate-right:after, .mui-push-right:after{
+				right:4px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<header class="mui-bar mui-bar-nav" style="background-color: white;">
+			    <a onclick="msxBack()" class="mui-icon mui-icon-left-nav mui-pull-left" style="color: black;"></a>
+			    <h1 class="mui-title">客服 / FAQ</h1>
+			</header>
+			
+			<div class="">
+				<p style="margin-top: 50px;background-color: white;margin-bottom: 0;padding-bottom: 10px;padding-top: 10px;border-bottom: 1px solid #ccc;font-size: 18px;padding-left: 20px;color: rgb(220,124,85);">
+					<img src="ziyuan/remen1.png" style="width: 20px;vertical-align: middle;" />
+					热门
+				</p>
+				<ul class="mui-table-view" id="remen-box">
+					
+				</ul>
+				<script type="text/html" id="remen-tp">
+					<% for(var i=0;i<data.length;i++){ %>
+					<li onclick="k('mokuai1/wentixiangqing.html?id=<%= data[i].article_id %>','wentixiangqing')" class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<%= data[i].article_title %>
+						</a>
+					</li>
+					<% } %>
+				</script>
+				
+					
+				
+				
+				
+			</div>
+			
+			<div class="" style="height: 10px;width: 100%;float: left;background-color: #efeff4;">
+				
+			</div>
+			
+			<div class="" style="margin-bottom: 100px;" id="wenti-box" >
+					
+			</div>
+			<script type="text/html" id="wenti-tp">
+				<% for(var i=0;i<data.length;i++){ %>
+				<p style="background-color: white;margin-bottom: 0;padding-bottom: 10px;padding-top: 10px;border-bottom: 1px solid #ccc;font-size: 18px;padding-left: 20px;color: rgb(220,124,85);">
+					<img src="ziyuan/suoyouwenti1.png" style="width: 20px;vertical-align: middle;" />
+					<%= data[i].ac_name %>
+				</p>
+				<ul class="mui-table-view">
+				
+					<% for(var ii=0;ii<data[i].child.length;ii++){ %>
+					<li onclick="k('mokuai1/wentixiangqing.html?id=<%= data[i].child[ii].article_id %>','wentixiangqing')" class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<%= data[i].child[ii].article_title %>
+						</a>
+					</li>
+					<% } %>
+				</ul>	
+					
+				<% } %>
+			</script>
+			
+				
+				
+				
+			
+			
+		</div>
+		
+		<div class="" style="position: fixed;bottom: 0;height: auto;width: 100%;background-color: white;padding: 14px;border-top: 1px solid #aaa;">
+			<div onclick="msxIm()" class="di-item" style="width: 33%;float: left;text-align: center;border-right: 1px solid #ccc;">
+				<img src="ziyuan/zaixiankefu.png" style="width: 16px;vertical-align: middle;"/>
+				<span style="vertical-align: middle;font-size: 15px;color: #777;">在线客服</span>
+			</div>
+			<div class="di-item" style="width: 33%;float: left;text-align: center;border-right: 1px solid #ccc;">
+				<a id="zixunrexian" href="">
+					<img src="ziyuan/dianhuazixun.png" style="width: 14px;vertical-align: sub;"/>
+					<span style="vertical-align: middle;font-size: 15px;color: #777;">咨询热线</span>
+					
+				</a>
+			</div>
+			<div onclick="login_k('tmpl/member/member_feedback.html','member_feedback')" class="di-item" style="width: 33%;float: left;text-align: center;">
+				<img src="ziyuan/yijianfankui.png" style="width: 16px;vertical-align: middle;"/>
+				<span style="vertical-align: middle;font-size: 15px;color: #777;">建议</span>
+			</div>
+			
+		</div>
+		
+		
+		
+		
+		
+	</body>
+</html>
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/kefuzhongxin.js" type="text/javascript" charset="utf-8"></script>

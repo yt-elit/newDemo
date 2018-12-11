@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+<script type="text/javascript" src="../js/config.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/tongyong.css"/>
+		<link rel="stylesheet" type="text/css" href="../mokuai1/ziyuan/shouyefenlei.css"/>
+		<title>商品列表</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			.yincangfenlei{
+				display: none;
+			}
+			#list-box .list-item:nth-child(odd){
+				float: left;
+			}
+			#list-box .list-item:nth-child(even){
+				float: right;
+			}
+			.dingbu1{
+				position: fixed!important;
+				top: 0;
+				z-index: 1000;
+			}
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar">
+
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container">
+
+				<div id="page10004" class="page zShow" data-router="page10004">
+					
+					
+					
+					<div id="dingbu1" class="ele-container" style="background-image: url(../mokuai1/ziyuan/shouye_bg.png);background-size: 100% auto;background-repeat: no-repeat;background-position: 0 -43px;">
+						<div class="element free-vessel" style="width: 320px; height: 43px; background-color: rgba(0, 0, 0, 0); margin: 0px auto auto 0px; opacity: 1;">
+							<div class="im-hongdian" onclick="msxIm()" class="element" style="background-color: red;position: absolute; left: 32px; top: 6px;width: 6px;height:6px!important;border-radius: 10px;z-index: 2;display: none;"></div>
+							<div onclick="msxIm()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 34px; width: 35px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 10px; top: 4px;"><img src="../mokuai1/ziyuan/liaoyiliao-bg.png"></div>
+							<div onclick="msxIm()" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: white; font-size: 8px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 14px; top: 17px;">聊一聊</div>
+							<div onclick="fenxiangyemian()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 34px; width: 35px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 276px; top: 4px;"><img src="../mokuai1/ziyuan/fenxiang-bg1.png"></div>
+							<div onclick="fenxiangyemian()" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: white; font-size: 8px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 286px; top: 18px;">分享</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 215px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 54px; top: 9px;"><img src="../mokuai1/ziyuan/shurukuang-bai.png"></div>
+							<div onclick="msxQrcode()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 11px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 246px; top: 17px;"><img src="../mokuai1/ziyuan/xiangji-i.png"></div>
+							<div onclick="k('tmpl/search.html','sousuoshangpin')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 15px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 60px; top: 15px;"><img src="../mokuai1/ziyuan/sousuo-icon.png"></div>
+							<div onclick="k('tmpl/search.html','sousuoshangpin')" id="sousuokuang" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(204, 204, 204); font-size: 11px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 80px; top: 10px; width: 153px;"></div>
+						</div>
+					</div>
+					<div id="dingbu1-1" style="display: none;height: 44px;">
+						
+					</div>
+					
+					<div onclick="xuangouzhinan(this)" id="xuangouzhinan" class="ele-container" style="background-color: rgba(237,233,232,1);border-bottom: 1px solid rgba(158,153,152,1);padding-top:2px;display: none;">
+						<div class="element free-vessel" style="width: 320px; height: 79px; margin: -4px auto auto 0px; opacity: 1;">
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 12px; height: 16px; line-height: 17px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 63px; top: 18px; width: 216px;font-weight: bold;"><span id="xuangouzhinan-title"></span>选购指南</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 53px; width: 53px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 7px; top: 18px;"><img id="xuangouzhinan-img" src=""></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 19px; width: 70px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 126px; top: 0px;"><img src="../mokuai1/ziyuan/file_5bace8342c9bd.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 0); font-size: 8px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 145px; top: -2px;">选购指南</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(102, 102, 102); font-size: 10px; height: 31px; line-height: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 63px; top: 37px; width: 217px;">请告诉我们您想购买的<span id="xuangouzhinan-leixing"></span>类型 我们会为您挑选出合适的产品
+							</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 13px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 289px; top: 38px;"><img src="../mokuai1/ziyuan/file_5bacea15b81c5.png"></div>
+						</div>
+					</div>
+					<div class="ele-container" id="fenleilan" style="display: none;">
+						<div class="element free-vessel" style="width: 320px; height: initial; margin: 0px auto auto 0px;">
+							<div id="fenlei-box">
+								
+							</div>
+							<script type="text/html" id="fenlei-list">
+								<% for(i=0;i<data.length;i++){ %>
+									<% if( i == 11 ){ %>
+										<div class="fenlei-item gengduofenlei" onclick="gengduofenlei()">
+											<div class="fenlei-item-mig">
+												<img src="../mokuai1/ziyuan/fenlei-gengduo.png">
+											</div>
+											<p>更多分类</p>
+										</div>
+										<div class="fenlei-item fenlei-list yincangfenlei" data-gc_id="<%= data[i].gc_id %>">
+											<div class="fenlei-item-mig">
+												<img src="<%= data[i].image %>">
+											</div>
+											<p><%= data[i].gc_name %></p>
+										</div>
+									<% }else if(i>11){ %>
+										
+										<div class="fenlei-item fenlei-list yincangfenlei" data-gc_id="<%= data[i].gc_id %>">
+											<div class="fenlei-item-mig">
+												<img src="<%= data[i].image %>">
+											</div>
+											<p><%= data[i].gc_name %></p>
+										</div>
+										
+									<% }else{ %>
+										<div class="fenlei-item fenlei-list <% if(data[i].active){ %>active<%}%>" data-gc_id="<%= data[i].gc_id %>">
+											<div class="fenlei-item-mig">
+												<img src="<%= data[i].image %>">
+											</div>
+											<p><%= data[i].gc_name %></p>
+										</div>
+									<% } %>
+								<% } %>
+							</script>
+							
+							
+							
+						</div>
+					</div>
+					<div class="ele-container" style="background-color: rgba(237,232,233,1);border-top: 1px solid rgba(158,154,153,1);border-bottom: 1px solid rgba(158,154,153,1);">
+						<div class="element free-vessel" style="width: 320px; height: 26px; margin: 0px auto auto 34px; opacity: 1;">
+							<div onclick="init_get_list('', '')" class="element text zhongjianxiang active" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 9px; height: 21px; line-height: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 5px; top: 5px; width: 40px;">综合</div>
+							<div onclick="init_get_list('1', '3')" class="element text zhongjianxiang" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 9px; height: 21px; line-height: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 67px; top: 5px; width: 40px;">价格</div>
+							<div onclick="init_get_list('2', '1')" class="element text zhongjianxiang" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 9px; height: 21px; line-height: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 130px; top: 5px; width: 40px;">销量</div>
+							<div onclick="init_get_list('2', '2')" class="element text zhongjianxiang" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 9px; height: 21px; line-height: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 192px; top: 5px; width: 40px;">人气</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 9px; height: 21px; line-height: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 254px; top: 5px; width: 40px;"></div>
+						</div>
+					</div>
+					<div class="ele-container" id="list-box" style="margin-bottom: 50px;float: left;">
+						
+						
+						
+					</div>
+					
+					<script type="text/html" id="list-tp">
+						
+						<% if( data.length == 0 ){ %>
+							<div class="" style="    text-align: center;
+    margin-top: 3rem;">
+								<img src="../images/search_w.png" style="    border: 0;
+    background: #ccc;
+    border-radius: 4rem;
+    width: 3rem;
+    padding: 1rem;
+    height: auto;"/>
+								<p style="color: black;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;">没有找到任何相关信息</p>
+								<p style="font-size: 0.8rem;
+    color: #aaa;">选择或搜索其它商品分类/名称...</p>
+							</div>
+						<% }else{ %>
+						
+						<% for(i=0;i<data.length;i++){ %>
+						<div onclick="open_shangpinxiangqing(<%= data[i].goods_id %>)" class="element free-vessel list-item" style="width: 156px; height: 209px; margin: 0px auto auto 0px; opacity: 1;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 156px; width: 156px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: -0.00231934px; top: 5px;"><img src="<%= data[i].goods_image_url %>"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 10px; height: 25px; line-height: 13px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 7px; top: 165px; width: 148px;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"><%= data[i].goods_name %></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 0, 0); font-size: 8px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 1px; top: 193px; width: 7px;">￥</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 10px; top: 192px; width: 45px;font-weight: bold;"><%= data[i].goods_price %>元</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(102, 102, 102); font-size: 8px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: right; position: absolute; left: 112px; top: 192px; width: 44px;">已售<%= data[i].goods_salenum %>件</div>
+							<div class="element text" style="border-radius: 2px;background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(102, 102, 102); font-size: 8px; height: 11px!important; line-height: 10px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 52px; top: 192px; width: 64px;border: 1px solid rgba(253,241,0,1);"><span style="display: block;"><span style="display: block;float: left;width: 28px;font-weight: bold;color: rgba(141,119,0,1);background-color: rgba(253,241,0,1);font-size: 8px;"> vip <span style="font-weight: initial;">价 </span></span> <span style="float: left;display:block;color: rgba(141,121,0,1);display: inline-block;text-align: center;width: 31px;"><%= data[i].vip_price %>元</span></span></div>
+						</div>
+						<% }} %>
+						
+					</script>
+					
+					
+					
+				</div>
+
+			</div>
+
+		</div>
+		
+		<div id="fanhuianniu">
+			<img src="../mokuai1/ziyuan/fanhuianniu.png"/>
+			<div onclick="msxBack()" class="fanhuianniu-left">
+				
+			</div>
+			<div onclick="backHome()" class="fanhuianniu-right">
+				
+			</div>
+		</div>
+
+	</body>
+
+</html>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/tmpl/product_list.js"></script>
+<script type="text/javascript" src="../js/fly/requestAnimationFrame.js"></script>
+<script type="text/javascript" src="../js/fly/zepto.fly.min.js"></script>
+<script type="text/javascript" src="../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../js/tmpl/addcart.js"></script>

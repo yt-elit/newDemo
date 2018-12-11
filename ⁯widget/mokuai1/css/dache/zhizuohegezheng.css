@@ -1,0 +1,74 @@
+#chazhaochanpin{
+	padding: 11px 10px 11px 0px;
+	color: #666;
+}
+#chazhaoanniu{
+	padding: 3px 0px 3px 10px;
+}
+#chazhaoshurukuang{
+	margin: 0px;
+}
+.list label{
+	padding-left: 44px !important;
+}
+.list input{
+	left: 14px !important;
+}
+.mui-card-content{
+	padding: 20px 0px;
+}
+#suozaiquyu{
+	font-size: 17px;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 64%;
+	color: #aaa;
+	height: initial;
+	overflow: initial;
+}
+#querenzhizuo{
+	width: 40%;
+	margin: 0 auto;
+}
+#yi{
+	display: inline-block;
+	width: 45%;
+	float: left;
+	color: black;
+}
+#er{
+	display: inline-block;
+	width: 45%;
+	float: left;
+	color: black;
+}
+#chengkai{
+	height: initial;
+}
+#gongchengmingcheng , #gongdimingcheng {
+	color: black;
+}
+
+
+
+
+@media  (max-width: 400px ) {
+	
+	
+#chazhaochanpin{
+	margin-left: -2rem;
+	padding-right: 0.4rem;
+}
+
+.list label{
+	padding-left: 26px !important;
+}
+
+.mui-checkbox input[type=checkbox]:before{
+	margin-left: -0.7rem;
+	font-size: 22px;
+	line-height: 1.4;
+}
+	
+	
+}

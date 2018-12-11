@@ -1,0 +1,26 @@
+#header {
+				background-color: #FA4D47;
+			}
+			#header * {
+				color: white;
+			}
+			
+			#fanhui {
+				display: inline-block;
+				margin-top: 3px;
+				margin-left: 5px;
+			}
+			
+			#fanhui img {
+				width: 30px;
+				height: 30px;
+				margin-left: 0px;
+				margin-top: 3px;
+			}
+			
+.msx-none-qing{
+	display: none;
+}
+.msx-p-t-5{
+	padding-top: 5px;
+}

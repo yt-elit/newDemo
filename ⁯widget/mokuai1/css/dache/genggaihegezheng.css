@@ -1,0 +1,35 @@
+.saomiaojian-title{
+	padding: 6px 0px;
+}
+.mui-off-canvas-left, .mui-off-canvas-right{
+	background: white;
+}
+.mui-input-row .search-title{
+	padding: 11px 10px 11px 0px;
+}
+#shangchuansaomoajian{
+	width: initial;
+	float: left;
+	margin: 10px;
+}
+.yejiao{
+	margin-top: 20px;
+}
+.mui-table-view{
+	padding-bottom: 10px !important;
+}
+.shangchuan{
+	height: initial !important;
+}
+
+/*用于菜单栏固定位置*/
+
+#offCanvasWrapper{
+	position: initial;
+}
+body{
+	overflow-x: hidden !important;
+}
+html{
+	overflow-x: hidden !important;
+}

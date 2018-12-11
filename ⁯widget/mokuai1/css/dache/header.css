@@ -1,0 +1,186 @@
+.msx-m-n{
+	margin: 0px;
+}
+.msx-m-t-n{
+	margin-top: 0px !important;
+}
+.msx-hongdian{
+	width: 10px;
+	height: 12px;
+	background: red;
+}
+.msx-c-b{
+	color: black;
+}
+.msx-b-n{
+	border-bottom: none !important;
+}
+.msx-list-title{
+	color: #777;
+}
+.msx-p-b-n{
+	padding-bottom: 0px;
+}
+.mui-badge-qianlan{
+	color: white;
+	background-color: rgba(38,198,218,1);
+}
+.msx-card{
+	overflow: initial;
+}
+.msx-card .msx-xuhao{
+	position: absolute;
+	top: -3%;
+	right: -2%;
+}
+
+.msx-card .msx-xuhao-right{
+	position: absolute;
+	top: -10px;
+	right: -2%;
+}
+
+.msx-card .msx-xuhao-left{
+	position: absolute;
+	top: -10px;
+	left: -2%;
+}
+.msx-clear-no{
+	clear: none;
+}
+.msx-hemoxing{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+}
+.msx-chuizhijuzhong{
+	align-items: center;
+	margin: auto;
+}
+.msx-p-b-10{
+	padding-bottom: 10px;
+}
+.color-blue{
+	color: deepskyblue;
+}
+.msx-p-t-5{
+	padding-top: 5px !important;
+}
+.msx-m-t-5{
+	margin-top: 5px !important;
+}
+.msx-m-t-m{
+	margin-top: 0px !important;
+}
+.msx-none{
+	display: none !important;
+}
+.msx-none-qing{
+	display: none;
+}
+.msx-m-t-20{
+	margin-top: 20px;
+}
+.msx-m-b-20{
+	margin-bottom: 20px;
+}
+.msx-d-flex{
+	display: flex !important; 
+}
+.msx-m-auto-0{
+	margin: auto 0 !important;
+}
+.msx-over-auto{
+	overflow-y: initial !important;
+	overflow-x: hidden;
+}
+.msx-zhuyi{
+	color: red;
+	font-size: 12px;
+}
+.msx-display-flex{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display: flex;
+}
+.msx-m-auto{
+	margin: auto;
+}
+.msx-hr-1{
+	width: 90%;
+	border-top: 1px solid #eee;
+	border-bottom: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/*********************************************************/
+
+/*
+ 分页样式
+ * */
+
+.rfb-page {
+	text-align: center;
+	margin-bottom: 100px;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #666;
+}
+
+.rfb-page .rfb-page-list {
+	display: inline-block;
+	width: 28px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	background: #f7f7fa;
+	margin-right: 1px;
+	margin-left: 1px;
+}
+
+.rfb-page .first .rfb-page-list {
+	width: 50px;
+	color: white;
+	background: #1C66A0;
+}
+
+.rfb-page .span .rfb-page-list {
+	width: 50px;
+	color: #009BDB;
+	background: #FFF;
+	
+}
+
+.rfb-page .active {
+	color: #fff;
+	background: #205299;
+}
+.rfb-page .rfb-page-list-noclick{
+	color: black;
+}
+
+/*********************************************************/
+
+
+/********************* 自由复制 ************************************/
+/*{
+    -webkit-user-select: all !important; 
+    -moz-user-select: all !important;
+     -ms-user-select: all !important;
+     user-select: all !important;
+}*/
+/*********************************************************/
+
+.mui-header-nianfen{
+	width: 25%;
+	height: initial;
+	background: transparent;
+	color: cornflowerblue;
+	z-index: 4444;
+	position: absolute;
+	right: 0;
+	background-image: url(../image/nian-tubiao.png);
+	background-repeat: no-repeat;
+	background-position:4.2rem 50%;
+}

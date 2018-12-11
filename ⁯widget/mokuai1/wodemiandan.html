@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- saved from url=(0111)http://a717.ffiabj.top/wweb_8/help_free_index.php?do=getHelpFreeOrderList&userid=13758669&accid=717&chanceapp=1 -->
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<!--解决ios自动识别电话号码-->
+		<meta name="format-detection" content="telephone=no">
+		<!--解决ios自动识别电话号码-->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="./wodemiandan_files/jquery-1.8.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./wodemiandan_files/publics.css">
+		<link rel="stylesheet" type="text/css" href="./wodemiandan_files/lightGallery.css">
+		<!--解决ios自动识别电话号码-->
+		<meta name="format-detection" content="telephone=no">
+		<!--解决ios自动识别电话号码-->
+		<link rel="stylesheet" type="text/css" href="./wodemiandan_files/publics1.css">
+		<link rel="stylesheet" type="text/css" href="./wodemiandan_files/my_free_single.css">
+		<title>我的免单-北皋楼外楼</title>
+<style type="text/css">
+			.btn{
+				background-color: dodgerblue;
+			}
+			.info b{
+				color: red;
+			}
+			.zhulima{
+				    position: absolute;
+				    right: 124px;
+
+			}
+		</style>
+	</head>
+
+	<body style="margin-bottom: 4em;">
+		<section>
+			<header>
+				<div onclick="msxBack()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 18px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 14px;line-height: 0px;"><img src="images/arrow_left_b.png" style="width: 100%;"></div>
+				<h2>我的免单</h2></header>
+			<div class="box">
+				<ul class="shop" id="orderlist">
+					<div id="list-box">
+						
+					</div>
+					
+					
+				</ul>
+			</div>
+			
+			<script type="text/html" id="list-tp">
+				<% for(var i = 0; i < data.length; i++){ %>
+					
+					
+					
+					<li><img src="<%=data[i].thumb%>" class="p_img">
+						<div class="info">
+							<h2><%=data[i].goods_name%></h2> <small class="time time_13331" id="time_13331_4583387_11-30 01:02">助力截止时间：<%=data[i].end_time%></small> <small>需<%=data[i].zhulirenshu%>人助力<span class="right" id="rightspan_13331"><%==data[i].renshucha%></span></small> <b><i>￥</i>0</b>
+							
+							<span onclick="jixufenxiang(<%=data[i].goods_id%>,<%=data[i].zhulima%>)" class="btn">继续分享</span> </div>
+					</li>
+					
+					
+				<% } %>
+				
+			</script>
+			
+			
+		</section>
+
+
+		
+	</body>
+
+</html>
+
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+function jixufenxiang(id,zhulima){
+	
+	
+	alert('您的助力码为：'+zhulima);
+	
+	fenxiangzhuli(id);
+}
+
+	
+_init();
+function _init(){
+	
+	var shuju	=	{};
+	var dizhi	=	ApiUrl + '/index.php?act=member&op=zhuli_goods_list';
+	var func	=	'_handle';
+	var op		=	{'dizhi':dizhi,'func':func,'shuju':shuju};
+	
+	ajax(op);
+	ol(); 
+}
+
+//处理返回数据
+function _handle(t){
+	
+	
+	
+	var data = {};
+		data.data = t.list;
+		
+	if( t.list.length <= 0 ){
+		tishi('无更多内容！');
+		return false;
+	}
+	
+		var html = template.render('list-tp',data);
+	
+		$('#list-box').html(html);
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	function guize(){
+		$('.fixed_help').show();
+	}
+	function guanbi(){
+		$('.fixed_help').hide();
+	}
+</script>

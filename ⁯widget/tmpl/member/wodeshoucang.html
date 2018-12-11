@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head><meta http-equiv="Cache-Control" content="no-cache" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>商品收藏</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_products_list.css">
+<style type="text/css">
+	.header-tab a{
+		padding: 0 0.4rem;
+	}
+	iframe{
+		border: none;
+		display: none;
+	}
+	.page1{
+		display: none;
+	}
+	.page2{
+		display: block;
+	}
+</style>
+</head>
+<body>
+<header id="header" class="fixed">
+  <div class="header-wrap">
+    <div class="header-l"> <a onclick="msxBackMember()"> <i class="back"></i> </a> </div>
+    <div class="header-tab">
+    	<a href="javascript:void(0);" class="cur">商品收藏</a>
+    	<a href="javascript:void(0);">闲置收藏</a>
+    	<a href="javascript:void(0);">话题收藏</a>
+    </div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>首页</a></li>
+        <li><a href="../search.html"><i class="search"></i>搜索</a></li>
+        <li><a href="../product_first_categroy.html"><i class="categroy"></i>分类</a></li>
+        <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的商城</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script> var navigate_id ="5";</script> 
+<script type="text/javascript" src="../../js/config.js"></script>
+<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+	
+	var tou_gao = $('#header').height();
+	
+	apiready = function(){
+		jiazaiduogechuangkou();
+		
+		$('.header-tab a').on('click',function(){
+			$(this).addClass('cur').siblings().removeClass('cur');
+			var i = $(this).index();
+			
+			qiehuanyemian(i);
+		})
+		
+	}
+	
+	//	加载多个窗口
+function jiazaiduogechuangkou() {
+	var headerH = parseInt( session('app-margin-top') );
+	var footerH = parseInt( session('app-margin-bottom') );
+	
+	headerH = tou_gao + headerH;
+
+	var frameH = api.winHeight - footerH;
+
+	api.openFrameGroup({
+		name: 'wodeshoucang',
+		scrollEnabled: false,
+		background : '#FFF',
+		preload : 2,
+		rect: {
+			x: 0,
+			y: headerH,
+			w: api.frameWidth,
+			h: 'auto',
+			marginBottom: footerH,
+		},
+		frames: [{
+			name: 'favorites',
+			url: 'favorites.html',
+			vScrollBarEnabled : false,
+			bounces : false,
+			scaleEnabled: true
+		}, {
+			name: 'wodexianzhishoucang',
+			url: '../../mokuai1/wodexianzhishoucang.html',
+			vScrollBarEnabled : false,
+			scaleEnabled: true
+		}, {
+			name: 'wodehuatishoucang',
+			url: '../../mokuai1/wodehuatishoucang.html',
+			bounces : false,
+			vScrollBarEnabled : false,
+			scaleEnabled: true
+		}]
+	}, function(ret, err) {
+		var index = ret.index;
+//		if( index == 3 ){
+//			api.execScript({
+//			    name: 'root',
+//			    frameName: 'wo',
+//			    script: 'gei();'
+//			});
+//		}else{
+//			api.setFrameAttr({
+//				name : 'zichuangkou',
+//				hidden : true,
+//			});
+//		}
+
+//		qiehuanyemian(2);
+
+		
+	});
+}
+
+
+/*
+ * 切换页面
+ */
+function qiehuanyemian(xiabiao) {
+		api.setFrameGroupIndex({
+			name: 'wodeshoucang',
+			index: xiabiao
+		});
+}
+</script>

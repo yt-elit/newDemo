@@ -1,0 +1,94 @@
+@charset "utf-8";
+.nctouch-order-item-con .goods-block {
+    position: relative;
+    z-index: 1;
+    border-bottom: solid #EEE 0.05rem;
+}
+.nctouch-order-item-con .goods-block a {
+    display: block;
+    color: #111;
+}
+.nctouch-order-item-con .goods-pic {
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+    position: absolute;
+    z-index: 1;
+    top: 0.38rem;
+    left: 0;
+}
+.nctouch-order-item-con .goods-info {
+    display: block;
+    height: 2.8rem;
+    padding: 0.38rem 0;
+    margin: 0 4rem 0 3.1rem;
+    position: relative;
+    z-index: 1;
+}
+.nctouch-order-item-con .goods-subtotal {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0.38rem;
+    right: 0.5rem;
+    width: 3.4rem;
+    text-align: right;
+    overflow: hidden;
+}
+.nctouch-order-item-con .goods-pic img {
+    width: 100%;
+    height: 100%;
+}
+.nctouch-order-item-con .goods-info .goods-name {
+    overflow: hidden;
+    height: 1.5rem;
+    font-size: 0.6rem;
+    line-height: 0.75rem;
+    margin-bottom: 0.1rem;
+    color: #333;
+}
+.nctouch-order-item-con .goods-info .goods-type {
+    overflow: hidden;
+    height: 1.2rem;
+    font-size: 0.45rem;
+    line-height: 0.6rem;
+    color: #999;
+}
+.nctouch-order-item-con .goods-subtotal .goods-price {
+    display: block;
+    font-size: 0.55rem;
+    line-height: 0.9rem;
+    font-weight: 600;
+}
+.nctouch-order-item-con .goods-subtotal .goods-num {
+    display: block;
+    font-size: 0.55rem;
+    line-height: 0.9rem;
+    color: #999;
+    font-weight: 600;
+}
+.nctouch-order-item-con .goods-subtotal .goods-price em {
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.dianzan-text0,.dianzan-text{
+	color: rgb(178, 178, 178);
+}
+.dianzan-text1{
+	color: red;
+}
+
+.shoucang-text0,.shoucang-text{
+	color: rgb(178, 178, 178);
+}
+.shoucang-text1{
+	color: rgb(255, 128, 13);
+}
+
+.guanzhu-text0,.guanzhu-text{
+	color: rgb(178, 178, 178);
+}
+.guanzhu-text1{
+	color: rgb(0, 180, 154);
+}

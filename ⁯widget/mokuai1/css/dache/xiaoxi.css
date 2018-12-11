@@ -1,0 +1,79 @@
+.mui-table-view-cell:after{
+	left: 0;
+}
+.icon-laba{
+	color: dodgerblue;
+	font-size: 17px;
+	margin-right: 5px;
+	vertical-align: super;
+}
+.xiaoxineirong{
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 85%;
+}
+.time{
+	float: right;
+	font-size: 12px;
+}
+.msx-hongdian{
+	top: 30% !important;
+}
+.mui-table-view-cell{
+	padding-bottom: 0px;
+}
+.yidu .icon-laba,.yidu .xiaoxineirong,.yidu p,.yidu .xiaoxineirong .zhongyao{
+	color: #ACACB4;
+}
+.yidu .mui-badge{
+	display: none;
+}
+.xiaoxi-list{
+	margin-top: 0px !important;
+}
+.xuanzekuang{
+	position: initial;
+}
+.xuanzekuang .xuanzeanniu{
+	float: left;
+	position: initial !important;
+	margin-top: -5px;
+	margin-left: -7px;
+	margin-right: 1px;
+}
+.mui-bar .msx-none-qing{
+	display: none;
+}
+#shanchu span{
+	top: 4px;
+}
+.mui-table-view-cell .xuanzekuang{
+	display: none;
+}
+.bianjimoshi .xuanzekuang{
+	display: inline-block;
+}
+.bianjimoshi .icon-laba{
+	display: none;
+}
+.mui-bar .mui-icon{
+	font-size: 14px;
+	margin-top: 6px;
+}
+#zanwuxiaoxi{
+	text-align: center;
+	color: #777;
+	margin-top: 60%;
+}
+.liebiaotianchong{
+	height: 24px;
+	background-color: #efeff4;
+}
+.mui-table-view:after{
+	background-color: initial;
+}
+.zhongyao{
+	color: red;
+}

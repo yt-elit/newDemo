@@ -1,0 +1,16 @@
+.mui-grid-view.mui-grid-9{
+	background-color: white !important;
+	border: none;
+}
+.mui-table-view-cell{
+	border: none !important;
+}
+.iconfont{
+	color: cornflowerblue;
+}
+.mui-card-header{
+	border-bottom: 1px solid #CCC;
+}
+#querenshangchuan{
+	margin: 0 auto;
+}

@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>视频浏览器</title>
+		<script src="./js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css" />
+		<style type="text/css">
+			.mui-bar{
+				height: initial;
+			}
+			html,body{
+				background:transparent;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav" style="display:none;">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="msxBack();"></a>
+			<h1 class="mui-title" id="biaoti"></h1>
+		</header>
+	</body>
+	<script src="./js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/api.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+			var houzhui = geiGet('urls',false);
+				
+				
+			
+		function guanbi(){
+			setInterval(function(){
+				msxBack()
+			},44)
+		}
+		
+		apiready = function() {
+			
+			var headerH = 24;
+
+			//	如果是苹果
+			if(api.systemType == 'ios') {
+				headerH = 20;
+			}
+			
+			
+//			var videoPlayer = api.require('videoPlayer');
+//				videoPlayer.play({
+//				    texts: {
+//				        head: {
+//				            title: ''
+//				        }
+//				    },
+//				    path: urls, //（可选项）字符串类型；文档的路径，支持网络和本地（fs://）路径；默认：未传值时不播放
+//				    //在 android 平台上不支持 widget://
+//				    autoPlay: true //（可选项）布尔类型；打开时是否自动播放；默认：true（自动播放）
+//				}, function(ret, err) {
+//				    if (ret) {
+//				    	
+//				    	if( ret.eventType == 'back' ){
+//				    		guanbi();
+//				    	}
+////				        alert(JSON.stringify(ret));
+//				    } else {
+//				    	guanbi();
+////				        alert(JSON.stringify(err));
+//				    }
+//				});
+			
+			
+//			api.addEventListener({
+//			    name: 'keyback'
+//			}, function(ret, err) {
+//			    alert('按了返回键');
+//			});
+			
+			var header = $api.byId('header');
+			$api.fixStatusBar(header);
+			var headerH = $api.offset(header).h + 10;
+			headerH = 0;
+			var urls = 'shipinliulanqi.html?urls='+houzhui;
+			var op = {'name':'tupianliulan','html':urls,'yh':headerH};
+			
+			qitaliulanqi(op);
+		};
+		
+		
+		function qitaliulanqi(op){
+			api.openFrame({
+				name: op.name,
+				url: op.html,
+				
+				bounces : false,
+				scaleEnabled : true,
+				rect: {
+					x: 0,
+					y: op.yh,
+					w: 'auto',
+					h: 'auto'
+				},
+				animation: {
+					type: 'none', //动画类型（详见动画类型常量）
+					subType: "none", //动画子类型（详见动画子类型常量）
+					duration: 0 //动画过渡时间，默认300毫秒
+				},
+			});
+		}
+		
+	</script>
+
+</html>

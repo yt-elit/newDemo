@@ -1,0 +1,42 @@
+﻿html{
+	font-size:20px;
+}
+header{
+	height:3.0875rem;
+	background-color:#0b83fa;
+}
+.logo-number{
+	height:1.575rem;
+	width:100%;
+	border-bottom:0.025rem solid #0668ba;
+	border-top:0.05rem solid #0074d3;
+}
+header h1{
+	width:7.9125rem;
+	height:0.9125rem;
+	text-indent:-99rem;
+	background:url(../images/logo.png) no-repeat center;
+	background-size:contain;
+	margin:0.4125rem 0 0 0.15rem;
+	float:left;
+}
+.phone-number{
+	font-size:0.45rem;
+	color:#fff;
+	float:right;
+	margin:0.7rem 1.15rem 0 0;
+}
+.header-nav{
+	width:96%;
+	margin-left:2%;
+	height: 1rem;
+}
+.header-nav .nav-btn{
+	height: 1rem;
+	width:25%;
+	line-height:1.4rem;
+	text-align: center;
+	font-size:0.475rem;
+	color:#fff;
+	float:left;
+}

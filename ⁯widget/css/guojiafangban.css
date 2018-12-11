@@ -1,0 +1,81 @@
+#tuichu {
+	font-size: 12px;
+}
+
+.tou-box {
+	/*box-shadow: 0 1px 2px rgba(0, 0, 0, .3);*/
+	padding: 24px 0px;
+	/*background-color: rgba(53,157,255,1);*/
+	background-image:url(../image/gerenzhongxin.jpg) ;
+	background-size:100% 100%;
+}
+
+#touxiang {
+	max-width: 60px;
+	width: 60px;
+	height: 60px;
+}
+
+#bianjiziliao {
+	font-size: 12px;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.qiye-list{
+	background-color: white !important;
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	border: none;
+}
+body{
+	background-color: white;
+}
+#yanshouchanpin{
+	color: cornflowerblue;
+	
+}
+#yanshoujilu{
+	color: seagreen;
+	
+}
+#tianjiazhijianyuan{
+	color: chocolate;
+	
+}
+#zhijianyuanliebiao{
+	color: mediumpurple;
+	
+}
+#fangbanliebiao{
+	color: chocolate;
+	
+}
+#shujutongji{
+	color: mediumpurple;
+	
+}
+#xiugaimima{
+	color: cornflowerblue;
+	
+}
+#shujutongji-qiye{
+	color: cornflowerblue;
+}
+#bangdingweixin{
+	color: yellowgreen;
+}
+#huancunbianma{
+	color: lightseagreen;
+}
+#lixianyanshou{
+	color: #800080;
+}
+#jiahuofankui{
+	color: red;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css"/>
+		<link rel="stylesheet" type="text/css" href="ziyuan/mui.css"/>
+		
+		<title>我的评论</title>
+
+
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			.shuoming img{
+				width: 20px;
+				height: 20px;
+				vertical-align: bottom;
+			}
+			.wodepinglun-text img{
+				width: 16px;
+				height: 16px;
+				vertical-align: bottom;
+			}
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar">
+		
+		<header class="mui-bar mui-bar-nav">
+			<a onclick="msxBackMember()" class="mui-icon mui-icon-left-nav mui-pull-left" style="color: black;"></a>
+			<h1 class="mui-title">我的评论</h1>
+		</header>
+		
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container">
+				
+				
+				
+		<div class="mui-content" style="margin-top: 50px;">
+			<style type="text/css">
+				.touxiang{
+					border-radius: 4px;
+					height: 100px!important;
+					max-width: 100px!important;
+				}
+				.shuoming{
+    overflow: overlay;
+    text-overflow: initial;
+    white-space: initial;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+				}
+				.list-item{
+					padding-right: 40px!important;
+				}
+				.wodepinglun-box{
+					position: relative;
+					margin-top: 5px;
+				}
+				.wodepinglun-text{
+					    padding-left: 57px;
+    font-size: 10px;
+    color: #4cc6e2;
+				}
+				.wodepinglun-tishi{
+					    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    color: #aaa;
+				}
+				.zanwuneirong{
+					    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    background: white;
+				}
+			</style>
+			
+			<div id="list-box">
+				
+			</div>
+			
+			
+			<script type="text/html" id="list-tp">
+				
+				<% if( data.length <= 0 ){ %>
+					<div class="zanwuneirong">
+						暂无内容
+					</div>
+				<% }else{ %>
+				<ul class="mui-table-view mui-table-view-chevron">
+					<% for( i=0;i<data.length;i++ ){ %>
+					<li onclick="k('mokuai1/faxianxiangqing.html?id=<%= data[i].zhuti_info.circle_id %>','faxianxiangqing')" class="mui-table-view-cell mui-media list-item">
+						<a class="">
+							<% if(data[i].zhuti_info.images_list.length > 0){ %>
+							<img class="mui-media-object mui-pull-left touxiang" src="<%= data[i].zhuti_info.images_list[0].path %>">
+							<% } %>
+							<div class="mui-media-body shuoming">
+								<%== data[i].zhuti_info.circle_name %>
+							</div>
+						</a>
+						
+						<div class="wodepinglun-box">
+							<p class="wodepinglun-text"><%== data[i].neirong %></p>
+							<span class="wodepinglun-tishi">我的评论：</span>
+						</div>
+					</li>
+					<% } %>
+				</ul>
+				
+				<% } %>
+			</script>
+			
+			
+			
+		</div>
+				
+				
+
+				
+				
+				
+				
+				
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/wodepinglun.js" type="text/javascript" charset="utf-8"></script>

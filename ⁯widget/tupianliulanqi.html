@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>图片浏览器导航条</title>
+		<script src="./js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css" />
+		<style type="text/css">
+			.mui-bar{
+				height: initial;
+			}
+			.mui-bar-nav{
+				box-shadow:none;
+				-webkit-box-shadow:none;
+			}
+			body,#header{
+				background-color:rgba(0,0,0,0.2);
+			}
+			#biaoti,#jiantou{
+				color:white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a id="jiantou" class="mui-icon mui-icon-left-nav mui-pull-left" onclick="msxBack();"></a>
+			<h1 class="mui-title" id="biaoti"></h1>
+		</header>
+	</body>
+	<script src="./js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+			var shuzu = geiGet('shuzu',false);
+			var index = geiGet('index',false);
+				shuzu = decodeURIComponent(decodeURIComponent( decodeURIComponent(shuzu )));
+				
+			var	img_arr = shuzu.split(',');
+			var zongshu = img_arr.length
+			
+			gaibianbiaoti( Number(index) + 1 );
+			
+			//改变标题
+			function gaibianbiaoti(index){
+				var str = index + ' / ' + zongshu;
+				document.getElementById("biaoti").innerText = str;
+			}
+
+		
+		apiready = function() {
+				
+		};
+		
+		
+		
+		
+	</script>
+
+</html>

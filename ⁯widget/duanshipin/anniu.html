@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			body{
+				background: transparent;
+			}
+			.mui-content{
+				background: transparent;
+			}
+			#luxiangzhong,#baocunluxiang{
+				display: none;
+			}
+			#luxiangzhong{
+				opacity: 0.4;
+			}
+			#shijian{
+				position: fixed;
+    top: 34px;
+    right: 5px;
+    color: white;
+    background: #aaa;
+    border-radius: 5px;
+    padding: 0px 5px;
+    font-size: 12px;
+    width: 40px;
+    text-align: center;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="mui-content">
+		    <button id="tuichu" type="button" onclick="msxBack()" style="margin-top: 25px;margin-left: 10px;" class="mui-btn mui-btn-green">退出</button>
+		    <button id="luxiangzhong" type="button" style="margin-top: 25px;margin-left: 10px;" class="mui-btn mui-btn-danger">录制中</button>
+		</div>
+		
+		<div id="shijian">
+			15 秒
+		</div>
+		
+		<div class="mui-content" style="position: fixed;bottom: 0;text-align: center;width: 100%;padding-bottom: 10px;">
+		    <button type="button" id="kaishiluxiang" onclick="kaishiluxiang();" class="mui-btn mui-btn-blue">开始录制</button>
+		    <button type="button" id="baocunluxiang" onclick="baocunluxiang();" class="mui-btn mui-btn-green">保存视频</button>
+		</div>
+		
+		
+		
+
+	</body>
+
+</html>
+<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.js"></script>
+<script src="../js/md5.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	var luzhishijian = 15;
+	
+	apiready = function(){
+api.setKeepScreenOn({
+    keepOn: true
+});
+	}
+	
+	function kaishiluxiang(){
+		
+		
+		document.getElementById("kaishiluxiang").style.display	=	'none';
+		document.getElementById("tuichu").style.display	=	'none';
+		document.getElementById("shijian").style.display	=	'block';
+		document.getElementById("baocunluxiang").style.display	=	'initial';
+		document.getElementById("luxiangzhong").style.display	=	'initial';
+		
+		$('#baocunluxiang').attr('disabled',true);
+		
+		
+		api.execScript({
+			name : 'luxiang-w',
+		    frameName: 'luxiang',
+		    script: 'kaishiluxiang();'
+		});
+		
+		setTimeout(function() {
+			yilushijian();
+			
+		}, 1000);
+		
+		
+		
+		setTimeout(function() {
+			$('#baocunluxiang').attr('disabled',false);
+		}, 2000);
+		
+		
+	}
+	
+	function baocunluxiang(){
+		clearInterval(jishi_id);
+		api.execScript({
+			name : 'luxiang-w',
+		    frameName: 'luxiang',
+		    script: 'jieshuluxiang();'
+		});
+	}
+	
+
+	var jishi_id;
+	function yilushijian(){
+			jishi_id = setInterval(function() {
+			luzhishijian = luzhishijian - 1;
+			
+			hehe	=	daojishi(luzhishijian);
+			
+			$('#shijian').text(hehe);
+			
+			if( luzhishijian == 0 ){
+				clearInterval(jishi_id);
+				baocunluxiang();
+			}
+			
+		}, 1000);
+	}
+	
+	
+var sec_to_time = function(s) {
+        var t;
+        if(s > -1){
+            var hour = Math.floor(s/3600);
+            var min = Math.floor(s/60) % 60;
+            var sec = s % 60;
+            if(hour < 10) {
+                t = '0'+ hour + ":";
+            } else {
+                t = hour + ":";
+            }
+
+            if(min < 10){t += "0";}
+            t += min + ":";
+            if(sec < 10){t += "0";}
+            t += sec.toFixed(0);
+        }
+        return t;
+    }
+
+function daojishi(s){
+	
+		str = s + ' 秒';
+		return str;
+	
+}
+	
+
+</script>

@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head><meta http-equiv="Cache-Control" content="no-cache" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>我发布的任务</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_common.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_cart.css">
+<link rel="stylesheet" type="text/css" href="../../css/dache/mui.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dache/tongyong.css" />
+
+<style type="text/css">
+	.mimatishi{
+	color: red;
+	font-size: 12px;
+	text-align: center;
+	display: block;
+}
+.mui-input-row label{
+	text-align: right;
+	line-height: initial;
+	padding: initial;
+	padding-right: 20px;
+	width: 30%;
+}
+.mui-input-group .mui-input-row{
+	height: initial;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.list-item-right{
+	display: table;
+}
+.mui-button-row{
+	margin: 20px 0px;
+}
+#suozaiquyu{
+	font-size: 17px;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 60%;
+	/*color: #aaa;*/
+	text-align: left;
+	height: initial;
+	overflow: initial;
+}
+#yi{
+	display: inline-block;
+	width: 45%;
+	float: left;
+}
+#er{
+	display: inline-block;
+	width: 50%;
+	float: left;
+}
+#chengkai{
+	height: initial;
+}
+.card-tishi{
+	font-size: 12px;
+	text-align: center;
+	display: block;
+	color: lightskyblue;
+}
+.chufadi{
+	color: #4e8858;
+	font-weight: bold;
+}
+.mudidi{
+	color: #9c2828;
+	font-weight: bold;
+}
+.julinini{
+	text-align: right;
+    font-weight: bold;
+    font-size: 1.0rem !important;
+    color: white;
+}
+.mui-card-header.mui-card-media{
+	background-color: rgba(255,137,11,1);
+}
+.fabushijian{
+	text-align: right;
+	color: #eee;
+	margin-top: 5px;
+	padding-bottom: 0px;
+}
+.tubiao{
+	float: left;
+}
+.tubiaozhiding{
+	font-size: 12px;
+	color: red;
+	margin-left: 5px;
+}
+.yiwancheng{
+	color: yellowgreen;
+}
+.mui-card-content{
+	padding-top:5px;
+}
+.renwuzhuangtai{
+	color: #039BE5;
+}
+.peisongren{
+	color: brown;
+}
+.header-l a i.back{
+	width: 18px;
+	height: 18px;
+}
+#box{
+	margin-bottom: 60px;
+}
+header.fixed{
+	background-color: rgba(248,248,248,1) !important;
+}
+.nctouch-single-nav.fixed{
+	background-color: rgba(248,248,248,1) !important;
+	top:1.9rem;
+}
+
+</style>
+</head>
+<body>
+<header id="header" class="fixed">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+    <span class="header-tab"><a href="javascript:void(0);" class="pintuan cur">我发布的任务</a></span>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>首页</a></li>
+        <li><a href="../search.html"><i class="search"></i>搜索</a></li>
+        <li><a href="../product_first_categroy.html"><i class="categroy"></i>分类</a></li>
+        <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的商城</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout">
+  <div class="nctouch-order-search" style="display: none;">
+    <form>
+      <span><input type="text" autocomplete="on" maxlength="50" placeholder="输入商品标题或订单号进行搜索" name="order_key" id="order_key" oninput="writeClear($(this));" >
+      <span class="input-del"></span></span>
+      <input type="button" id="search_btn" value="&nbsp;">
+    </form>
+  </div>
+  <div id="fixed_nav" class="nctouch-single-nav">
+    <ul id="filtrate_ul" class="w20h">
+      <li class="selected"><a href="javascript:void(0);" data-state="">全部</a></li>
+      <li><a href="javascript:void(0);" data-state="10">待接单</a></li>
+      <li><a href="javascript:void(0);" data-state="3">配送中</a></li>
+      <li><a href="javascript:void(0);" data-state="5">待确认</a></li>
+      <li><a href="javascript:void(0);" data-state="2">已完成</a></li>
+    </ul>
+  </div>
+  <div class="nctouch-order-list">
+    <ul id="order-list">
+    </ul>
+  </div>
+  <!--底部总金额固定层End-->
+</div>
+
+<div class="mui-content" id="box">
+			
+		    
+			
+			
+		</div>
+
+<div class="fix-block-r">
+	<a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script type="text/html" id="order-list-tmpl">
+<% if (data.length > 0){%>
+	
+<% for(var i = 0;i<data.length;i++){ %>
+<div class="mui-card" id="item-<%= data[i].id %>">
+	
+	
+	
+	
+<div class="mui-card-header mui-card-media">
+	<div class="tubiao">
+		快递
+	</div>
+	<div class="mui-media-body">
+		<p class="julinini <%= data[i].renwuzhuangtai_class %>">
+			<%= data[i].renwuzhuangtai_name %>
+		</p>
+	</div>
+	<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
+	<h2>小M</h2>
+	<p>发表于 2016-06-30 15:30</p>-->
+</div>
+<div class="mui-card-content">
+	<form class="mui-input-group">
+	
+	<div class="mui-input-row">
+		<label class="chufadi"><span class="bitian"></span>出发地</label>
+		<div class="list-item-right">
+			<%= data[i].msx_start_name %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="mudidi"><span class="bitian"></span>目的地</label>
+		<div class="list-item-right">
+			<%= data[i].msx_end_name %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>里程数</label>
+		<div class="list-item-right">
+			<%= data[i].zongjuli %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>发件人</label>
+		<div class="list-item-right">
+			<%= data[i].faburenxingming %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>发件人电话</label>
+		<div class="list-item-right">
+			<%= data[i].faburendianhua %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>收件人</label>
+		<div class="list-item-right">
+			<%= data[i].shoujianrenxingming %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>收件人电话</label>
+		<div class="list-item-right">
+			<%= data[i].shoujianrendianhua %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>任务状态</label>
+		<div class="list-item-right renwuzhuangtai">
+			<%= data[i].renwuzhuangtai_name %>
+		</div>
+	</div>
+	<% if(data[i].peisong_show){ %>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>配送人</label>
+		<div class="list-item-right peisongren">
+			<%= data[i].peisongren %>
+		</div>
+	</div>
+	<div class="mui-input-row">
+		<label class="zongjuli"><span class="bitian"></span>配送电话</label>
+		<div class="list-item-right">
+			测试版暂不提供
+		</div>
+	</div>
+	<% } %>
+	
+	
+	
+	</form>
+</div>
+<div class="mui-card-footer">
+	<a class="mui-card-link">
+		<button type="button" class="mui-btn mui-btn-success mui-icon mui-icon-map" onclick="shishiditu()">
+			实时地图
+		</button>
+	</a>
+	<a class="mui-card-link xia-you-anniu">
+		<% if( data[i].renwuzhuantai == 5 ){ %>
+			<button type="button" class="mui-btn mui-btn-primary mui-icon mui-icon-checkmarkempty" onclick="querenwancheng(this)" data-id="<%= data[i].id %>">
+				确认完成
+			</button>
+		<% }else{ %>
+				<%= data[i].renwuzhuangtai_name %>
+		<% } %>
+	</a>
+</div>
+
+
+
+
+
+</div>
+<% } %>
+	
+<%}else {%>
+	<div class="nctouch-norecord order">
+		<div class="norecord-ico"><i></i></div>
+		<dl>
+			<dt>您还没有相关的订单</dt>
+			<!--<dd>可以去看看哪些想要买的</dd>-->
+		</dl>
+		<!--<a href="<%=WapSiteUrl%>" class="btn">随便逛逛</a>-->
+	</div>
+<%}%>
+</script> 
+<script> var navigate_id ="5";</script> 
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/msx.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/zepto.waypoints.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/pintuan_order_list.js"></script>
+<script src="../../js/dache/chushihua.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/dache/tongyong.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/dache/mui.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+	var order_id = geiGet('order_id');
+	
+	var curpage = 1;
+	var key = getCookie('key');
+	if(!key){
+		window.location.href = WapSiteUrl+'/tmpl/member/login.html';
+	}
+	
+	$('#filtrate_ul li').on('click',function(){
+		curpage = 1;
+		order_id=null;
+		$(this).addClass('select').siblings().removeClass('select');
+		tijiao();
+	});
+	
+	
+	tijiao();
+	
+function tijiao(){
+	
+	var type = $('#filtrate_ul .selected a').attr('data-state');
+	
+	var op  = {};
+	op.uid = key;
+	op.type = type;
+	
+	if( order_id ){
+		op.order_id = order_id;
+	}
+	
+	
+	
+	var shuju	=	op;
+	var dizhi	=	'/home/dache/huoquwodefabudingdan';
+	var func	=	'tijiaochuli';
+	var a		=	{'dizhi':dizhi,'func':func,'datas':shuju};
+	jajax(a);
+}
+
+
+function tijiaochuli(t){
+	
+	var data  = {};
+	data.data = t.listData;
+	
+	var html = template.render('order-list-tmpl',data);
+	
+	document.getElementById("box").innerHTML = html;
+	
+	curpage = curpage + 1;
+	
+}
+
+
+function querenwancheng(dom){
+	
+	
+	mui.confirm('确认完成','',['确认','取消'],function(e){
+		if(e.index == 0){
+			
+			var id = $(dom).attr('data-id');
+	
+			var op  = {};
+			op.uid = key;
+			op.id = id;
+	
+			var shuju	=	op;
+			var dizhi	=	'/home/dache/yonghuquerenwancheng';
+			var func	=	'querenwanchengchuli';
+			var a		=	{'dizhi':dizhi,'func':func,'datas':shuju};
+			jajax(a);
+			
+		}
+	})
+	
+}
+
+function querenwanchengchuli(t){
+	var id = t.listData;
+	
+	
+	$('#item-'+id).find('.julinini').addClass('yiwancheng').text('已完成');
+	$('#item-'+id).find('.renwuzhuangtai').text('已完成');
+	$('#item-'+id).find('.xia-you-anniu').text('已完成');
+	
+}
+
+function shishiditu(){
+	mui.alert('实时定位显示快递员位置，查看快递员移动轨迹等功能，测试版暂不提供 ，欢迎购买定制版！',' ');
+}
+	
+	
+</script>

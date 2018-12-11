@@ -1,0 +1,12 @@
+.mui-table-view{
+	padding-bottom: 10px !important;
+}
+.nianfen {
+	padding: initial;
+	background: dodgerblue;
+	width: initial;
+	color: white;
+	padding: 5px;
+	margin:10px auto;
+	display: block;
+}

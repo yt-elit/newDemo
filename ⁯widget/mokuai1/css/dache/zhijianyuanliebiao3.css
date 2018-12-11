@@ -1,0 +1,31 @@
+.bianjiqu{
+	width: 100%;
+}
+.bianjiqu div{
+	text-align: center;
+	font-weight: bold;
+}
+.bianji{
+	border-right: 1px solid #DDD;
+	color: dodgerblue;
+}
+.yanshoujilu{
+	border-right: 1px solid #DDD;
+	color: burlywood;
+	
+}
+.henggang{
+	border-right: 1px solid #DDD;
+}
+.yunxudenglu{
+	color: yellowgreen;
+}
+.yunxuyanshou{
+	color: darkgreen;
+}
+.jinzhidenglu,.jinzhiyanshou{
+	color: red;
+}
+.jinzhibianji{
+	color: #9E9E9E;
+}

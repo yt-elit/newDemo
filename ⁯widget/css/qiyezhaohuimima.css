@@ -1,0 +1,21 @@
+#wangjimima{
+	float: right;
+}
+#yanzhengma{
+	width: 35%;
+	float: left;
+}
+#fasongyanzhengma{
+	width: 28%;
+	border: 1px solid deepskyblue;
+	border-radius: 10px;
+	padding: 4px;
+	text-align: center;
+	margin-top: 8px;
+}
+.mimatishi{
+	color: red;
+	font-size: 12px;
+	text-align: center;
+	display: block;
+}

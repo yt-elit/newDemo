@@ -1,0 +1,21 @@
+.mui-off-canvas-left, .mui-off-canvas-right{
+	background: white;
+}
+.mui-input-row .search-title{
+	padding: 11px 10px 11px 0px;
+}
+.qushangchuan{
+	margin-top: -6px;
+}
+
+/*用于菜单栏固定位置*/
+
+#offCanvasWrapper{
+	position: initial;
+}
+body{
+	overflow: hidden !important;
+}
+html{
+	overflow-x: hidden !important;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="A6099067688435" version="0.0.1"> 
+  <name>防化检测</name>  
+  <description>kemeihudong</description>  
+  <author email="kemeihudong@126.com" href="http://www.kemeihudong.com">kemeihudonga</author>  
+  <content src="index.html"/>  
+  <preference name="pageBounce" value="false"/>  
+  <preference name="appBackground" value="rgba(0,0,0,0.0)"/>  
+  <preference name="windowBackground" value="rgba(0,0,0,0.0)"/>  
+  <preference name="frameBackgroundColor" value="rgba(0,0,0,0.0)"/>  
+  <preference name="hScrollBarEnabled" value="false"/>  
+  <preference name="vScrollBarEnabled" value="false"/>  
+  <preference name="autoLaunch" value="true"/>  
+  <preference name="fullScreen" value="false"/>  
+  <preference name="autoUpdate" value="true"/>  
+  <preference name="smartUpdate" value="false"/>  
+  <preference name="debug" value="true"/>  
+  <preference name="statusBarAppearance" value="true"/>  
+  <permission name="readPhoneState"/>  
+  <permission name="camera"/>  
+  <permission name="record"/>  
+  <permission name="location"/>  
+  <permission name="fileSystem"/>  
+  <permission name="internet"/>  
+  <permission name="bootCompleted"/>  
+  <permission name="hardware"/>  
+  <access origin="*"/>  
+  <feature name="wx"> 
+    <param name="urlScheme" value="wx72b8b56d605c892e"/>  
+    <param name="apiKey" value="wx72b8b56d605c892e"/>  
+    <param name="apiSecret" value="e5dee7760b640e01690454ee5adf31ee"/> 
+  </feature>  
+  <feature name="QQPlus"> 
+    <param name="urlScheme" value="tencent101515819"/>  
+    <param name="apiKey" value="101515819"/> 
+  </feature>  
+  <meta-data name="com.baidu.lbsapi.API_KEY" value="qyZmV1lVcOUS5nNc9mvDnkBtBz3eha0y"/>  
+  <feature name="bmLocation"> 
+    <param name="ios_api_key" value="qyZmV1lVcOUS5nNc9mvDnkBtBz3eha0y"/> 
+  </feature> 
+  <feature name="wxPay">
+    <param name="urlScheme" value="wx72b8b56d605c892e"/>
+    <param name="apiKey" value="wx72b8b56d605c892e"/>
+    <param name="apiSecret" value="e5dee7760b640e01690454ee5adf31ee"/>
+  </feature>
+</widget>

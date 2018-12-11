@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8" />
+	<title>微聊</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/swiper-3.4.1.min.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/fontSize.js"></script>
+	<script src="js/swiper-3.4.1.min.js"></script>
+	<script src="js/wcPop/wcPop.js"></script>
+	<style type="text/css">
+		.splitline::after{
+			border-right: none;
+		}
+		.neirong img{
+			height: 0.4rem!important;
+			vertical-align: top!important;
+		}
+		.neirong p{
+			display: inline-block;
+		}
+		.kuang{
+			width: 1rem;
+		}
+		.wc__recordChat-list ul li .img .wc__badge{
+			width: 10px;
+    height: 10px;
+    top: 1px;
+    right: 2px;
+    border-radius: 57px;
+		}
+	</style>
+</head>
+<body>
+	
+	<!-- <>微聊主容器 -->
+	<div class="wechat__panel clearfix">
+		<div class="wc__home-wrapper flexbox flex__direction-column">
+			<!-- //顶部 -->
+			<div class="wc__headerBar fixed">
+				<div class="inner flexbox" style="background: rgba(57,58,63,1);">
+					<a class="back splitline" href="javascript:;" onclick="msxBack()"></a>
+					<h2 class="barTit flex1">聊天列表</h2>
+				</div>
+			</div>
+
+			<!-- //4个tabBar滑动切换 -->
+			<div class="wc__swiper-tabBar flex1">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<!-- //1、）微聊主页-->
+						<div class="swiper-slide">
+							<div class="wc__scrolling-panel">
+								<!-- //聊天记录信息 -->
+								<div class="wc__recordChat-list" id="J__recordChatList">
+									
+								</div>
+								
+								<script type="text/html" id="list-tp">
+								<ul class="clearfix">
+								<% for(var i = 0;i<data.length;i++){ %>
+								<li onclick="k('im/danliao.html?to_member_id=<%= data[i].active_member_id %>','danliao')" class="flexbox wc__material-cell">
+									<div class="img"><img src="<%= data[i].active_member_avatar %>" />
+									<% if( data[i].is_hongdian == 1 ){ %>
+									<em class="wc__badge">&nbsp;</em>
+									<% } %>
+									</div>
+									<div class="info flex1 kuang">
+										<h2 class="title"><%= data[i].active_member_nickname %></h2>
+										<div class="desc clamp1 neirong">
+											<%== data[i].neirong %>
+										</div>
+									</div>
+									<label class="time"><%= data[i].active_add_time %></label>
+								</li>
+									
+								<% } %>
+								</ul>
+								</script>
+								
+								
+								
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+	
+
+
+	<script type="text/javascript">
+		/** __公共函数 */
+		$(function(){
+			
+			$("#J__popupTopBar").on("click", ".wrap__topbar-mask", function () {
+				$(this).parent().hide();
+			});
+			// 禁止长按弹出系统菜单
+			$(".wechat__panel").on("contextmenu", function(e){
+				e.preventDefault();
+			});
+		});
+		
+		/** __自定函数 */
+		$(function(){
+			//***1、-------------------------
+			// 聊天记录页面（长按操作）
+			$("#J__recordChatList").on("longTap", "li", function(e){
+				var _this = $(this);
+				wcPop({
+					skin: 'androidSheet',
+					shadeClose: true,
+
+					btns: [
+						{text: '标为未读', style: 'line-height:50px;'},
+						{text: '置顶聊天', style: 'line-height:50px;'},
+						{
+							text: '删除该聊天',
+							style: 'line-height:50px;',
+							onTap:function() {
+								wcPop({
+									skin: 'android',
+									content: '删除后，将会清空该聊天记录',
+
+									btns: [
+										{
+											text: '取消',
+											onTap:function() {
+												wcPop.close();
+											}
+										},
+										{
+											text: '删除',
+											style: 'color:#ffba00',
+											onTap:function() {
+												_this.remove();
+												wcPop.close();
+											}
+										}
+									]
+								});
+							}
+						}
+					]
+				});
+			});
+
+
+			
+
+			
+		});
+	</script>
+	
+</body>
+</html>
+<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+var member_id = session('member_id');
+
+if( sysType == 'wx' ){
+	_init();
+}else{
+	//app准备成功
+	apiready = function(){
+		_init();
+	}
+}
+
+/*
+ * 初始化
+ */
+function _init(){
+	var shuju	=	{'member_id':member_id};
+		var dizhi	=	ApiUrl + '/index.php?act=im&op=getlist';
+		var func	=	'_handle';
+		var op		=	{'dizhi':dizhi,'func':func,'shuju':shuju};
+		ajax(op);
+}
+
+/*
+ * 渲染列表
+ */
+function _handle(t){
+//	console.log(JSON.stringify(t));
+	
+	var data = {};
+		data.data = t.list;
+	var html = template.render('list-tp',data);
+	$('#J__recordChatList').html(html);
+}
+
+setInterval(function(){
+	_init();
+},4444);
+	
+</script>

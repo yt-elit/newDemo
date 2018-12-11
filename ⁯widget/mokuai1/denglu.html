@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css" />
+		<title>登录</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			.dingwei-input{
+				    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			
+		</style>
+		<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
+</style>
+	</head>
+
+	<body class="app width-marketing-bar" style="background-color: rgba(237,233,232,1);">
+
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container">
+
+				<div id="page10015" class="page zShow" data-router="page10015" style="background-image: url(ziyuan/denglubg.png);background-repeat: no-repeat;background-size: 100% auto;background-position-y: 37px;">
+					<div class="ele-container msx-header">
+						<div class="element free-vessel" style="width: 320px; height: 38px; margin: 0px auto auto 0px; opacity: 1;border-bottom: solid 0.00rem #EEE;    background-color: rgba(34,100,176,1);">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 11px;"><img src="images/arrow_left_w.png"></div>
+							<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 38px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 0px;"></div>
+							<div class="element text msx-header-title" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: white; font-size: 15px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 145px; top: 6px;">登陆</div>
+						</div>
+					</div>
+					
+					
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 132px; margin: 0px auto auto 0px; opacity: 1;"></div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 43px; margin: 0px auto auto 0px; opacity: 1;background-color: rgba(34,100,176,0.8);font-weight: bold;">
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 14px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 111.5px; top: 9px; right: auto;">手机号快速登录</div>
+						</div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px;  margin: 0px auto auto 0px; opacity: 1;height: 124px;">
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 15px; top: 21px;">手机号</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 12px;  height: 25px!important; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 62px; top: 20px; width: 213px;">
+								<input placeholder="请输入手机号" class="dingwei-input" type="number" name="phone" id="phone" value="" />
+							</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 15px; top: 59px;">验证码</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 12px;  height: 15px!important; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 62px; top: 63px; width: 43px;">
+								<input placeholder="验证码" class="dingwei-input" type="number" name="yanzhengma" id="yanzhengma" value="" maxlength="6" />
+							</div>
+							<div id="huoquyanzhengma" onclick="huoquyanzhengma()" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: #F2B302; font-size: 12px;  height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 114px; top: 60px; ">点击发送验证码</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 1px; width: 217px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 58px; top: 43px;background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,1) 50%, white 50%);"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 1px; width: 50px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 58px; top: 80px;background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,1) 50%, white 50%);"></div>
+							
+							
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 15px; top: 100px;">推荐码</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 12px;  height: 15px!important; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 62px; top: 105px; width: 43px;">
+								<input placeholder="推荐码" class="dingwei-input" type="number" name="tuijianma" id="tuijianma" value="" maxlength="6" />
+							</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 1px; width: 50px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 58px; top: 122px;background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,1) 50%, white 50%);"></div>
+							
+							
+							
+						</div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 46px; margin: 10px auto auto 0px; opacity: 1;">
+							<div onclick="denglu()" class="element button" style="background-color: rgb(34, 100, 176); border-color: rgb(48, 145, 242); border-radius: 4px; border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 14px; height: 31px; line-height: 31px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 91px; position: absolute; left: 115px; top: 8px;">登录</div>
+						</div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 104px; margin: 0px auto auto 0px; opacity: 1;">
+							<div onclick="msxWxLogin()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 46px; width: 37px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 77px; top: 38px;"><img src="ziyuan/community_default.png"></div>
+							<div onclick="msxQQLogin()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 46px; width: 37px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 205px; top: 38px;"><img src="ziyuan/community_default.png"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/api.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+	var is_dj	=	true;
+	var miaoshu	=	60;
+	
+	
+	function huoquyanzhengma(){
+		
+		var phone = $('#phone').val();
+		
+		if( phone.length != 11 ){
+			tishi('请输入正确的手机号！');
+			return false;
+		}
+		
+		
+		if( !is_dj ){
+			return;
+		}
+		
+		
+		
+		is_dj	=	false;
+		
+		$('#huoquyanzhengma').addClass('dan');
+		
+		$('#huoquyanzhengma').text(miaoshu + ' s');
+		
+		var ds	=	setInterval(function() {
+			miaoshu	=	miaoshu	-1;
+			$('#huoquyanzhengma').text(miaoshu + ' s');
+			
+			if( miaoshu == 0 ){
+				clearInterval(ds);
+				$('#huoquyanzhengma').removeClass('dan');
+				$('#huoquyanzhengma').text('点击发送验证码');
+				is_dj	=	true;
+				miaoshu	=	60;
+			}
+			
+		}, 1000);
+		
+		fasongyanzhengma();
+		
+	}
+	
+	//发送验证码
+	function fasongyanzhengma(){
+		
+		var phone = $('#phone').val();
+		
+		var shuju	=	{'phone':phone};
+		var dizhi	=	ApiUrl + '/index.php?act=connect&op=get_sms_captcha&type=4';
+		var func	=	'_handle';
+		var op		=	{'dizhi':dizhi,'func':func,'shuju':shuju};
+		
+		ajax(op);
+	}
+	
+	function _handle(t){
+		
+	}
+	
+	
+	//登录
+	function denglu(){
+		var phone = $('#phone').val();
+		
+		if( phone.length != 11 ){
+			tishi('请输入正确的手机号！');
+			return false;
+		}
+		var yanzhengma = $('#yanzhengma').val();
+		
+		if( yanzhengma.length != 6 ){
+			tishi('请输入验证码！');
+			return false;
+		}
+		
+		var tuijianma = $('#tuijianma').val();
+		
+		
+		var phone = $('#phone').val();
+		
+		var shuju	=	{'phone':phone,'log_captcha':yanzhengma,'tuijianma':tuijianma};
+		var dizhi	=	ApiUrl + '/index.php?act=login&op=login';
+		var func	=	'msxWxLoginAjaxchuli';
+		var op		=	{'dizhi':dizhi,'func':func,'shuju':shuju};
+		
+		ajax(op);
+		ol('',1);
+	}
+	
+
+</script>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css"/>
+		<link rel="stylesheet" type="text/css" href="ziyuan/mui.css"/>
+		
+		<title>消息</title>
+
+
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar">
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" style="color: black;opacity: 0.6;" onclick="msxBack()"></a>
+			<h1 class="mui-title">消息</h1>
+		</header>
+		
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container">
+				
+				
+				
+		<div class="mui-content" style="margin-top: 50px;">
+			<style type="text/css">
+				.touxiang{
+					border-radius: 4px;
+				}
+				.shuliang{
+					right: 33px!important;
+				}
+				.msg-biaoti{
+					    margin-top: 10px;
+    font-size: 15px;
+				}
+			</style>
+			
+			
+			<ul class="mui-table-view mui-table-view-chevron">
+				
+				<li onclick="k('mokuai1/xiaoxi_pinglun_and_aite.html','xiaoxi_pinglun_and_aite')" class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left touxiang" src="ziyuan/x-2.png">
+						<div class="mui-media-body msg-biaoti">
+							收到的评论和@
+							<p class="mui-ellipsis"></p>
+						</div>
+					</a>
+					<span class="mui-badge mui-badge-success shuliang" id="pinglun_and_aite">0</span>
+				</li>
+				<li onclick="k('mokuai1/xiaoxi_xinzengguanzhu.html','xiaoxi_xinzengguanzhu')" class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left touxiang" src="ziyuan/x-3.png">
+						<div class="mui-media-body msg-biaoti">
+							新增关注
+							<p class="mui-ellipsis"></p>
+						</div>
+					</a>
+					<span class="mui-badge mui-badge-danger shuliang" id="guanzhu">0</span>
+				</li>
+				<li onclick="k('mokuai1/xiaoxi_zan_and_shoucang.html','xiaoxi_zan_and_shoucang')" class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left touxiang" src="ziyuan/x-1.png">
+						<div class="mui-media-body msg-biaoti">
+							收到的赞和收藏
+							<p class="mui-ellipsis"></p>
+						</div>
+					</a>
+					<span class="mui-badge mui-badge-primary shuliang" id="zan_and_shoucang">0</span>
+				</li>
+				<li onclick="dakaisixin()" class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left touxiang" src="ziyuan/sixin.jpg" style="border-radius: 4px;">
+						<div class="mui-media-body msg-biaoti">
+							私信
+							<p class="mui-ellipsis"></p>
+						</div>
+					</a>
+					<span class="mui-badge mui-badge-red shuliang" id="sixinliang">0</span>
+				</li>
+				<li onclick="k('mokuai1/xiaoxi_tongzhixiaoxi.html','xiaoxi_tongzhixiaoxi')" class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left touxiang" src="ziyuan/x-4.png">
+						<div class="mui-media-body msg-biaoti">
+							通知消息
+							<p class="mui-ellipsis"></p>
+						</div>
+					</a>
+					<span class="mui-badge mui-badge-purple shuliang" id="xitongxiaoxi">0</span>
+				</li>
+			</ul>
+			
+		</div>
+				
+				
+
+				
+				
+				
+				
+				
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+<script src="../js/api.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/picker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/poppicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/xiaoxi.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css" />
+		<title>积分商品列表</title>
+
+		<style rel="sheetstyle">
+			body{
+				background-color: initial;
+			}
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			
+			
+			.liebiaozuo{
+				float: left;
+				border-right: 1px solid rgba(237,237,237,1)!important;
+				border-bottom: 1px solid rgba(237,237,237,1)!important;
+				height: 187px!important;
+			}
+			.liebiaozuo:nth-child(even){
+				float: right;
+				
+				border-bottom: 1px solid rgba(237,237,237,1)!important;
+				width: 159px!important;
+				height: 187px!important;
+			}
+
+			
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar">
+
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container">
+				
+				
+				
+				
+				
+				
+				
+
+				<div id="page10005" class="page zShow" data-router="page10005">
+					
+					
+					
+					
+					
+					<div class="ele-container msx-header">
+						<div class="element free-vessel" style="width: 320px; height: 38px; margin: 0px auto auto 0px; opacity: 1;border-bottom: solid 0.05rem #EEE;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 11px;"><img src="images/arrow_left_b.png"></div>
+							<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 38px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 0px;"></div>
+							<div class="element text msx-header-title" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 15px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 130px; top: 6px;">积分商品</div>
+						</div>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 21px; margin: 0px auto auto 0px; opacity: 1;">
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 52px; top: 6px;font-weight: bold;">我的积分 <span id="wodejifen">0</span></div>
+							<div onclick="duihuanjilu()" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 217px; top: 6px;font-weight: bold;">兑换记录 <span id="duihuanshu">0</span></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 20px; width: 1px; margin-left: 0px; margin-right: 0px; margin-top: 0px; left: 159px; top: 1px; position: absolute;"><img src="ziyuan/file_5bad8c97cbe29.png"></div>
+						</div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 10px; margin: 0px auto auto 0px;background-color: rgba(237,233,232,1);"></div>
+					</div>
+					<div class="ele-container" id="list-box">
+						
+						
+						
+					</div>
+					<script type="text/html" id="list-tp">
+						<% for(i=0;i<data.length;i++){ %>
+						<div onclick="duihuanshangpinla(this)" data-jifen="<%= data[i].pgoods_points %>" data-vip-type="<%= data[i].pgoods_limitmgrade %>" data-id="<%= data[i].pgoods_id %>" class="element free-vessel liebiaozuo" style="width: 160px;  margin: 0px auto auto 0px; opacity: 1;">
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 13px; font-weight: bold; height: initial!important;  margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 6px; top: 9px; width: 139px;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;"><%= data[i].pgoods_name %></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 124px; width: 124px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 18px; top: 32px;"><img src="<%= data[i].pgoods_image %>"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 0, 0); font-size: 11px; height: 12px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: right; position: absolute; left: 12px; top: 166px; right: auto; width: 75px;font-weight: bold;"><%= data[i].pgoods_points %><span style="color: rgba(157,162,165,1);font-size: 9px;">积分</span></div>
+							<% if(data[i].pgoods_limitmgrade == '1'){ %>
+							<div class="element text" style="background-color: rgba(255, 5, 0,1); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 227, 45); font-size: 8px; height: 11px!important; line-height: 10px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 90px; top: 166px; width: 18px;border: 1px solid rgb(255,227,45);border-radius: 2px;text-align: center;">VIP</div>
+							<% } %>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(102, 102, 102); font-size: 8px; height: 12px; line-height: 11px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: right; position: absolute; right: 0px; top: 166px; width: 48px;color: #ccc;padding: 0px 1px;">库存<%= data[i].pgoods_storage %>件</div>
+						</div>
+						<% } %>
+					</script>
+					
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/picker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/chajian/poppicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jifenshangpinliebiao.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css" />
+		<title>卖</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			html,body{
+				height: 100%;
+				background-color: rgba(200,200,200,1);
+			}
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar">
+
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container">
+
+				<div id="page10013" class="page zShow" data-router="page10013" style="">
+					<div class="ele-container">
+						<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px;  margin-left: auto; margin-right: auto; margin-top: 5px;height: auto;"><img src="ziyuan/file_5baf245408817.png" style="width: 100%;height: auto;"></div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 71px; margin: 0px auto auto 0px; opacity: 1;position: fixed;bottom: 46px;">
+							<div onclick="login_k('mokuai1/fabuershou.html','fabuershou')" class="element button" style="background-color: rgb(48, 145, 242); border-color: rgb(48, 145, 242); border-radius: 0px; border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 14px; height: 35px; line-height: 35px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 120px; left: 16px; top: 14px; position: absolute;">卖二手</div>
+							<div onclick="login_k('mokuai1/fabuershou.html?is_jimai=1','fabuershou')" class="element button" style="background-color: rgb(48, 145, 242); border-color: rgb(48, 145, 242); border-radius: 0px; border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 14px; height: 35px; line-height: 35px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 120px; left: 181px; top: 14px; position: absolute;">急卖通道</div>
+						</div>
+					</div>
+					
+					
+					<!-- 底栏 -->
+						<div class="ele-container" id="dilan-box" style="background-color: rgba(200,200,200,1);">
+						<div class="element free-vessel" style="width: 320px; height: 46px; margin: 0px auto auto 0px; opacity: 1;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 10px; width: 311px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 7px; top: 0px;"><img src="ziyuan/file_5bb036f2d7d03.png"></div>
+							<div onclick="qiehuandilan(1)" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 21px; width: 21px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 26px; top: 7px;"><img src="ziyuan/shouye-i.png" class="dilanimg-1"></div>
+							<div onclick="qiehuandilan(1)" class="element text dilan-1" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 25px; top: 30px;">首页</div>
+							<div onclick="qiehuandilan(2)" class="element picture dilan-2" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 20px; width: 20px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 86px; top: 8px;"><img src="ziyuan/gonggao-i.png" class="dilanimg-2"></div>
+							<div onclick="qiehuandilan(2)" class="element text dilan-2" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 84px; top: 30px;">闲置</div>
+							<div onclick="qiehuandilan(4)" class="element picture dilan-4" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 19px; width: 21px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 213px; top: 9px;"><img src="ziyuan/fuwu-i.png" class="dilanimg-4"></div>
+							<div onclick="qiehuandilan(4)" class="element text dilan-4" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 212px; top: 30px;">发现</div>
+							<div onclick="qiehuandilan(5)" class="element picture dilan-5" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 19px; width: 18px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 274px; top: 8px;"><img src="ziyuan/wode-i.png" class="dilanimg-5"></div>
+							<div onclick="qiehuandilan(5)" class="element text dilan-5" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 271px; top: 30px;">我的</div>
+						</div>
+					</div>
+					<!-- //底栏 -->
+					
+					
+				</div>
+
+			</div>
+
+		</div>
+		
+		
+		
+		<div id="dilan-mai" onclick="qiehuandilan(3)" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px;"><img src="ziyuan/woyaomai-icon.png" class="dilanimg-3"></div>
+		
+
+	</body>
+
+</html>
+
+
+<script src="js/dache/jquery.js"></script>
+
+<script type="text/javascript">
+	
+//	function qiehuandilan(xiabiao){
+//		
+//		$('.dilanimg-1').attr('src','ziyuan/shouye-i.png');
+//		$('.dilanimg-2').attr('src','ziyuan/gonggao-i.png');
+//		$('.dilanimg-3').attr('src','ziyuan/woyaomai-i.png');
+//		$('.dilanimg-4').attr('src','ziyuan/fuwu-i.png');
+//		$('.dilanimg-5').attr('src','ziyuan/wode-i.png');
+//		
+//		switch (xiabiao){
+//			case 1:
+//				$('.dilanimg-1').attr('src','ziyuan/shouye-icon.png');
+//				break;
+//			case 2:
+//				$('.dilanimg-2').attr('src','ziyuan/gonggao-icon.png');
+//				break;
+//			case 3:
+//				$('.dilanimg-3').attr('src','ziyuan/woyaomai-icon.png');
+//				break;
+//			case 4:
+//				$('.dilanimg-4').attr('src','ziyuan/fuwu-icon.png');
+//				break;
+//			case 5:
+//				$('.dilanimg-5').attr('src','ziyuan/wode-icon.png');
+//				break;
+//			default:
+//				break;
+//		}
+//		
+//		for (var i = 1; i < 6; i++) {
+//			if( i == xiabiao ){
+//				$('.dilan-'+i).addClass('active');
+//				continue;
+//			}
+//			$('.dilan-'+i).removeClass('active');
+//		}
+//		
+//	}
+	
+</script>

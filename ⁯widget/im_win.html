@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>百姓商城</title>
+		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+
+	<body>
+		
+	</body>
+
+</html>
+<script type="text/javascript">
+	apiready = function(){
+		
+	var headerH = parseInt( session('app-margin-top') );
+	var footerH = parseInt( session('app-margin-bottom') );
+	
+	
+		api.openFrame({
+			name: 'im_win',
+			url: 'im/index.html',
+
+			bounces: false,
+			scaleEnabled: true,
+			bgColor: '#fff',
+			rect: {
+				x: 0,
+				y: headerH,
+				w: 'auto',
+				h: 'auto',
+				marginBottom: footerH
+			},
+		});
+	}
+</script>

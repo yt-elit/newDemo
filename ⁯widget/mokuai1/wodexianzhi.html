@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+		<title>我的发布</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			.bg-baise{
+				background-color: white;
+			}
+			
+			
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar"  style="min-height: 100vh;">
+		<div class="page-container-parent" style="background-image: url(ziyuan/wofabudebg.png);background-repeat: no-repeat;background-size: 100% 94px;background-color: rgba(241,245,248,1);">
+			<div id="page-container" class="page-container">
+				
+				
+				
+				
+				
+
+				<div id="LnAVVvA464_page10002" class="page zShow" data-router="LnAVVvA464_page10002">
+					
+					<div class="ele-container msx-header msx-header2">
+						<div class="element free-vessel" style="width: 320px; height: 38px; margin: 0px auto auto 0px; opacity: 1;border-bottom: solid 0.05rem #EEE;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 11px;"><img src="images/arrow_left_b.png"></div>
+							<div onclick="msxBack()" class="element picture" style="opacity: 0; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 38px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 0px;"></div>
+							<div class="element text msx-header-title" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 15px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 130px; top: 6px;">我的闲置</div>
+							
+							<!--<div onclick="msxBack()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 38px; width: 83px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; right: 10px; top: 0px;line-height: 38px!important;font-size: 12px;text-align: right;color: #ff5800;">下架宝贝</div>-->
+							
+						</div>
+					</div>
+					
+					<div class="msx-header2-bottom">
+						
+					</div>
+					
+					
+					<br />
+					<div class="ele-container" style="display: none;" id="wanshan">
+						<div class="element free-vessel" style="width: 298px; height: 87px; background-color: rgb(255, 255, 255); box-shadow: rgb(0, 0, 0) 0px 4px 7px; margin: 0px auto auto; opacity: 1;border-radius: 4px;">
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 28px; top: 13px;">划重点：</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 13px; width: 13px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 13px; top: 19px;"><img src="https://img.zhichiwangluo.com/zcimgdir/album/file_5bae1b60be72c.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 77px; top: 13px;">增加曝光力可以卖得更快</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 13px; width: 13px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 14px; top: 54px;"><img src="https://img.zhichiwangluo.com/zcimgdir/album/file_5bae1b9479ff1.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 35px; top: 48px;">完善个人信息</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 130px; top: 48px;">曝光力 +10</div>
+							<div onclick="login_k('mokuai1/shezhi.html','shezhi')" class="element button" style="background-color: rgb(255, 234, 91); border-color: rgb(48, 145, 242); border-radius: 3px; border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 59px; position: absolute; left: 227px; top: 48px;">去完善</div>
+						</div>
+					</div>
+					<div class="ele-container" style="display: none;">
+						<div class="element free-vessel bg-baise" style="width: 320px; height: 48px; margin: 7px auto auto 0px; opacity: 1;">
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 68px; top: 13px;">游戏宝贝</div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 12px; width: 18px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 42px; top: 20px;"><img src="https://img.zhichiwangluo.com/zcimgdir/album/file_5bae1ba29a1db.png"></div>
+							<div class="element picture" style="opacity: 1; background-color: rgb(224,224,224); border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 25px; width: 1px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 159px; top: 11px;"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 15px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 212px; top: 18px;"><img src="https://img.zhichiwangluo.com/zcimgdir/album/file_5bae1bb124209.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 12px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 235px; top: 13px;">我的问答</div>
+						</div>
+					</div>
+					<div class="ele-container">
+						
+						<div id="list-box">
+							
+						</div>
+						<script type="text/html" id="list-tp">
+							
+							<% if( data.length <= 0 ){ %>
+								<div class="element free-vessel bg-baise" style="width: 320px; height: 124px; margin: 7px auto auto 0px; opacity: 1;text-align: center;line-height: 124px;">
+									暂无内容
+								</dvi>
+							<% }else{ %>
+								
+								<% for( var i=0;i<data.length;i++ ){ %>
+								<div class="element free-vessel bg-baise" id="goods-id-<%= data[i].goods_id %>" style="width: 320px; height: 124px; margin: 7px auto auto 0px; opacity: 1;position: relative;">
+									<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 3px; border-style: none; border-width: 0px; height: 60px; width: 60px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 11px;"><img src="<%= data[i].xianzhi_images[0] %>"></div>
+									<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 14px; font-weight: bold; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 74px; top: 9px; width: 229px;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;"><%= data[i].goods_name %></div>
+									<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 9px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 81px; top: 31px;">￥</div>
+									<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(245, 53, 48); font-size: 14px; font-weight: bold; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 92px; top: 29px;"><%= data[i].goods_price %></div>
+									<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(136, 136, 136); font-size: 8px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 82px; top: 54px;">收藏 <%= data[i].shoucang_count %></div>
+									<div class="element text time" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(136, 136, 136); font-size: 8px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 200px; top: 54px;width: 100px;text-align: right;"><%= data[i].add_time %></div>
+									<div class="element breakline" style="border-width: 1px; border-bottom-style: solid; margin-top: 0px; margin-left: 0px; margin-right: 0px; width: 293px; border-bottom-color: rgb(233, 233, 233); position: absolute; left: 13px; top: 75px; height: 10px;"></div>
+									<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(53, 53, 53); font-size: 9px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 14px; top: 86px;display: none;">刚刚擦亮</div>
+									<div onclick="caliang(this)" data-goods-id="<%= data[i].goods_id %>" class="element button" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(233, 233, 233); border-radius: 2px; border-style: solid; border-width: 1px; color: rgb(53, 53, 53); font-size: 12px; height: 22px; line-height: 22px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 66px; position: absolute; left: 97px; top: 90px;">擦亮</div>
+									<div onclick="shangxiajia(this)" data-type="<%= data[i].goods_show %>" class="element button" data-goods-id="<%= data[i].goods_id %>" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(233, 233, 233); border-radius: 2px; border-style: solid; border-width: 1px; color: rgb(53, 53, 53); font-size: 12px; height: 22px; line-height: 22px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 43px; position: absolute; left: 172px; top: 90px;"><% if(data[i].goods_show==1){ %>上架中<%}else{%>已下架<%}%></div>
+									<div onclick="login_k('mokuai1/bianjiershou.html?goods_id=<%= data[i].goods_id %>','bianjiershou')" class="element button" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(233, 233, 233); border-radius: 2px; border-style: solid; border-width: 1px; color: rgb(53, 53, 53); font-size: 12px; height: 22px; line-height: 22px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 44px; position: absolute; left: 223px; top: 90px;">编辑</div>
+									<div onclick="shanchu(this)" data-goods-id="<%= data[i].goods_id %>" class="element button" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(233, 233, 233); border-radius: 2px; border-style: solid; border-width: 1px; color: rgb(53, 53, 53); font-size: 12px;  height: 22px; line-height: 22px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; width: 31px; position: absolute; left: 273px; top: 90px;font-weight: bold;">删除</div>
+									
+								</div>
+									
+								<% } %>
+								
+							<% } %>
+						</script>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+
+
+<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ziyuan/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/wodexianzhi.js" type="text/javascript" charset="utf-8"></script>

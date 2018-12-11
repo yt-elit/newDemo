@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>人防防化产品信息查证系统</title>
+		<script src="./js/chushihua.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="./css/tongyong.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<style type="text/css">
+			.mui-bar {
+				height: initial;
+			}
+			
+			body {
+				background-color: white;
+			}
+			#header{
+				height: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<!--<a id="fanhui" class="" onclick="cw();">
+				<img src="image/back.png" />
+			</a>
+			<h1 class="mui-title" id="biaoti"></h1>-->
+		</header>
+	</body>
+
+	<script src="./js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/tongyong.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/api.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			var header = $api.byId('header');
+			$api.fixStatusBar(header);
+			var headerH = $api.offset(header).h + 0;
+			var urls = geiGet('urls', false);
+			
+//			var biaoti = geiGet('biaoti', false);
+//			biaoti = decodeURIComponent(biaoti);
+			var op = {
+				'name': 'zhimakaimen2',
+				'html': urls,
+				'yh': headerH
+			};
+//			document.getElementById("biaoti").innerText = biaoti;
+			qitaliulanqi(op);
+		};
+
+		function qitaliulanqi(op) {
+			api.openFrame({
+				name: op.name,
+				url: op.html,
+
+				bounces: false,
+				scaleEnabled: true,
+				bgColor: '#fff',
+				rect: {
+					x: 0,
+					y: op.yh,
+					w: 'auto',
+					h: 'auto',
+				},
+				//				progress :{
+				//						type 	: 'default',
+				//						title	:	"标题",
+				//  					text	:	"内容",
+				//				},
+			});
+		}
+	</script>
+
+</html>

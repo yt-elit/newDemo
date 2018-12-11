@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://a717.ffiabj.top/wweb_8/help_free_index.php?accid=717&chanceapp=1 -->
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<!--解决ios自动识别电话号码-->
+		<meta name="format-detection" content="telephone=no">
+		<!--解决ios自动识别电话号码-->
+		
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="./zhulishangpinliebiao_files/jquery-1.8.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./zhulishangpinliebiao_files/publics.css">
+		<link rel="stylesheet" type="text/css" href="./zhulishangpinliebiao_files/lightGallery.css">
+		<link rel="stylesheet" type="text/css" href="./zhulishangpinliebiao_files/help_free_single.css">
+
+		<title>助力享免单-北皋楼外楼</title>
+		<style type="text/css">
+			.btn{
+				background-color: dodgerblue;
+			}
+			.info b{
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body style="margin-bottom: 4em;">
+		<header class="head_title">
+			<div onclick="msxBack()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 15px; width: 18px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 11px; top: 14px;line-height: 0px;"><img src="images/arrow_left_b.png" style="width: 100%;"></div>
+			<h2>助力享免单</h2><small class="right" onclick="guize()" >规则</small></header>
+		<section>
+			<div class="box">
+				<div class="my_free" onclick="k('mokuai1/wodemiandan.html','wodemiandan')"><img src="./zhulishangpinliebiao_files/help_free.png">我的免单<img src="./zhulishangpinliebiao_files/yuan_jx3.png" class="right"></div>
+				<ul class="shop" id="prodlist">
+					<h2><img src="./zhulishangpinliebiao_files/help_free_tody.png"></h2>
+					<div id="list-box">
+						
+					</div>
+					
+					
+				</ul>
+			</div>
+			
+			<script type="text/html" id="list-tp">
+				<% for(var i = 0; i < data.length; i++){ %>
+					<li>
+					<img src="<%=data[i].thumb%>" class="p_img">
+						<div class="info">
+							<h2><%=data[i].goods_name%></h2><small>需<%=data[i].zhulirenshu%>人助力</small><b><i>￥</i>0</b><span onclick="fenxiangzhuli(<%=data[i].id%>)" class="btn" id="p_4655515" status="0">邀请好友助力</span></div>
+					</li>
+				<% } %>
+				
+			</script>
+		
+			<div onclick="guanbi()" class="fixed_help" style="display: none;">
+				<div class="help_box">
+					<h2>助力享免单<img src="./zhulishangpinliebiao_files/close2.png"></h2> <small>1.  邀请好友助力，在助力期截止前达到助力人数，即可0元免费获得该商品。</small> <small>2.  每个新用户仅可助力一次。且同一登录账号、同一手机号、同一终端设备号均视为同一用户。</small> <small>3.  邀请到足够人数的好友帮您助力成功后视为商品免单。</small> <small>4.  助力成功后，需在7天内到指定地点领取，否则视为放弃该商品。</small> </div>
+			</div>
+			
+			<div class="loading"><img src="./zhulishangpinliebiao_files/ajax.gif"></div>
+		</section>
+		<div class="loading"><img src="./zhulishangpinliebiao_files/ajax.gif"></div>
+
+		<div class="overlay_div_attr" style="display: none;"></div>
+		<div class="overlay_div" style="display: none;"></div>
+
+
+		
+		
+	</body>
+
+</html>
+<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+_init();
+function _init(){
+	
+	var shuju	=	{};
+	var dizhi	=	ApiUrl + '/index.php?act=goods&op=zhuli_goods_list';
+	var func	=	'_handle';
+	var op		=	{'dizhi':dizhi,'func':func,'shuju':shuju};
+	
+	ajax(op);
+	ol(); 
+}
+
+//处理返回数据
+function _handle(t){
+	var data = {};
+		data.data = t.list;
+		
+	var html = template.render('list-tp',data);
+	
+	$('#list-box').html(html);
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	function guize(){
+		$('.fixed_help').show();
+	}
+	function guanbi(){
+		$('.fixed_help').hide();
+	}
+</script>

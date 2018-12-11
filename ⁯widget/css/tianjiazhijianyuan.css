@@ -1,0 +1,36 @@
+.mimatishi{
+	color: red;
+	font-size: 12px;
+	text-align: center;
+	display: block;
+}
+.mui-input-row label{
+	text-align: right;
+	padding-right: 20px;
+}
+.mui-button-row{
+	margin: 20px 0px;
+}
+#suozaiquyu{
+	font-size: 17px;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 60%;
+	/*color: #aaa;*/
+	text-align: left;
+	height: initial;
+	overflow: initial;
+}
+#yi{
+	display: inline-block;
+	width: 45%;
+	float: left;
+}
+#er{
+	display: inline-block;
+	width: 50%;
+	float: left;
+}
+#chengkai{
+	height: initial;
+}

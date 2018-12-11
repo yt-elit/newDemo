@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(255, 255, 255);">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta id="viewport" name="viewport" content="width=320,initial-scale=1.171875,maximum-scale=1.171875, minimum-scale=1.171875, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="keywords" content="百姓商城">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<script type="text/javascript">
+			var ismobile = /Mobile/.test(navigator.userAgent);
+			if(ismobile && !(self.frameElement && self.frameElement.tagName == "IFRAME")) { //在手机上且不在iframe里
+				var winw = window.screen.availWidth,
+					scale_w = winw / 320;
+				document.getElementById('viewport').content = "width=320,initial-scale=" + scale_w + ",maximum-scale=" + scale_w + ", minimum-scale=" + scale_w + ", user-scalable=no";
+			} else {
+				window.onload = function() {
+					var st = document.createElement('style');
+					st.type = "text/css";
+					st.innerHTML = 'body{width:320px;margin:0 auto;}';
+					document.head.appendChild(st);
+				}
+			}
+			if(/iphone/i.test(navigator.userAgent) && self.frameElement && self.frameElement.tagName == "IFRAME") { //在iPhone的iframe里时
+				window.onload = function() {
+					var style = document.createElement('style');
+					style.type = "text/css";
+					style.innerHTML = 'body{width:320px;margin:0 auto;height:' + window.innerHeight + 'px;overflow-y: auto;overflow-x: hidden;}';
+					document.head.appendChild(style);
+				}
+			}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./ziyuan/slick_theme.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/animation_library.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/component.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/photoswipe.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/default-skin.css">
+		<link rel="stylesheet" type="text/css" href="./ziyuan/webapp.css">
+		<link rel="stylesheet" type="text/css" href="ziyuan/tongyong.css" />
+		<title>我的</title>
+
+		<style rel="sheetstyle">
+			body::-webkit-scrollbar,
+			div::-webkit-scrollbar,
+			p::-webkit-scrollbar,
+			textarea::-webkit-scrollbar,
+			section::-webkit-scrollbar,
+			ul::-webkit-scrollbar,
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0;
+			}
+			html,body{
+				    background-color: rgba(237,233,232,1);
+				    /*height: 100%;*/
+			}
+			.hengxian{
+				background-color: #ccc!important;
+			}
+		</style>
+	</head>
+
+	<body class="app width-marketing-bar">
+
+		<div class="page-container-parent">
+			<div id="page-container" class="page-container" style="overflow-y: auto;">
+
+				<div id="page10010" class="page zShow" data-router="page10010" style="background-image: url(ziyuan/wodeyemianbg.png);background-repeat: no-repeat;background-size: 100%;background-color: rgba(237,233,232,1);background-position-y: -137px;">
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 36px; margin: 0px auto auto 0px; opacity: 1;background-color: rgba(255,255,255,0.2);">
+							<div onclick="login_k('mokuai1/shezhi.html','shezhi')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 14px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 15px; top: 8px;"><img src="ziyuan/file_5bae318c244fd.png"></div>
+							<div onclick="login_k('mokuai1/shezhi.html','shezhi')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 9px; height: 12px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 13px; top:23px;">设置</div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 13px; height: 25px; line-height: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 134px; top: 8px;">我的商城</div>
+							
+							<div class="element text" style=" color: red; font-size: 8px; height: 12px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 300px; top:2px;display: none;" id="xiaoxibiaodian">●</div>
+							
+							<div onclick="login_k('mokuai1/xiaoxi.html','xiaoxi')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 14px; width: 14px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 287px; top: 8px;">
+								<img src="ziyuan/xiaoxi-1.png">
+							</div>
+							
+							
+							<div onclick="login_k('mokuai1/xiaoxi.html','xiaoxi')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 9px; height: 12px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 285px; top:23px;">消息</div>
+							
+							
+						</div>
+					</div>
+					<div class="ele-container">
+						<div class="element free-vessel" style="width: 320px; height: 544px; margin: 0px auto 10px 0px; opacity: 1;">
+							<div onclick="login_k('tmpl/member/predepositlog_list.html','predepositlog_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 21px; top: 48px; width: 61px;"><span id="yue">0</span> 元</div>
+							<div onclick="login_k('tmpl/member/predepositlog_list.html','predepositlog_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 21px; top: 62px; width: 61px;">余额</div>
+							<div onclick="login_k('tmpl/member/pointslog_list.html','pointslog_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 238px; top: 48px; width: 61px;"><span id="jifen">0</span> 分</div>
+							<div onclick="login_k('tmpl/member/pointslog_list.html','pointslog_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 238px; top: 62px; width: 61px;">积分</div>
+							<div onclick="gerenzhuye(this)" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(255, 255, 255); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 83px; top: 84px; width: 154px;" id="yonghunicheng">登录 \ 注册</div>
+							<div onclick="gerenzhuye(this)" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 54px; width: 54px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 133px; top: 22px;border-radius: 54px;"><img id="touxiang" src="ziyuan/file_5bae318d892e5.png"></div>
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 30px; width: 30px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 168px; top: 4px;display: none;" id="is_huiyuan"><img src="ziyuan/file_5bae31874dec8.png"></div>
+							<div onclick="login_k('tmpl/member/views_list.html','views_list')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 25px; width: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 76px; top: 124px;"><img src="ziyuan/file_5bae319055f84.png"></div>
+							<div onclick="login_k('tmpl/member/views_list.html','views_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 62px; top: 152px; width: 61px;">浏览足迹</div>
+							
+							
+							
+							<div onclick="login_k('mokuai1/qiandao.html','qiandao')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 27px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 151px; top: 122px;"><img src="ziyuan/qiandao.png"></div>
+							<div onclick="login_k('mokuai1/qiandao.html','qiandao')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 136px; top: 152px; width: 61px;">签到</div>
+							
+							
+							
+							<div onclick="login_k('tmpl/member/wodeshoucang.html','wodeshoucang')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 20px; width: 20px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 219px; top: 126px;"><img src="ziyuan/file_5bae3188f1642.png"></div>
+							<div onclick="login_k('tmpl/member/wodeshoucang.html','wodeshoucang')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 201px; top: 152px; width: 61px;">我的收藏</div>
+							
+							
+							
+							
+							
+							
+							<div class="" style="width: 320px; height: 466px; margin: 0px auto 10px 0px; opacity: 1;">
+								
+								<div onclick="fabiaohuati()" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 45px; top: 189px;"><img src="ziyuan/fabuhuati.png"></div>
+								<div onclick="fabiaohuati()" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 27px; top: 222px; width: 61px;">发表话题</div>
+								
+								<div onclick="login_k('mokuai1/wodepinglun.html','wodepinglun')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 119px; top: 189px;"><img src="ziyuan/wodepinglun.png"></div>
+								<div onclick="login_k('mokuai1/wodepinglun.html','wodepinglun')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 101px; top: 222px; width: 61px;">我的评论</div>
+								
+								<div onclick="login_k('mokuai1/wodeguanzhu.html','wodeguanzhu')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 188px; top: 189px;"><img src="ziyuan/guanzhu.png"></div>
+								<div onclick="login_k('mokuai1/wodeguanzhu.html','wodeguanzhu')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 171px; top: 222px; width: 61px;">关注</div>
+								
+								<div onclick="login_k('mokuai1/wodefensi.html','wodefensi')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 252px; top: 189px;"><img src="ziyuan/fensi.png"></div>
+								<div onclick="login_k('mokuai1/wodefensi.html','wodefensi')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 235px; top: 222px; width: 61px;">粉丝</div>
+								
+								
+								<div class="element picture hengxian" style="opacity: 1; background-color: rgb(178, 178, 178); border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 1px; width: 320px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 248px;"></div>
+								
+								<div class="element picture hengxian" style="opacity: 1; background-color: rgb(178, 178, 178); border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 1px; width: 320px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 177px;"></div>
+								
+								
+								
+							</div>
+							
+							<div class="" style="width: 320px;  margin: 0px auto 10px 0px; opacity: 1;position: absolute;top: 70px;">
+								
+								<div onclick="login_k('tmpl/member/order_list.html','order_list')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 31px; width: 32px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 45px; top: 189px;"><img src="ziyuan/file_5bae31941b9a2.png"></div>
+							<div onclick="login_k('tmpl/member/order_list.html','order_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 27px; top: 222px; width: 61px;">我的订单</div>
+							
+							
+							
+							<div onclick="login_k('mokuai1/wodexianzhi.html','wodexianzhi')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 31px; width: 32px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 118px; top: 189px;"><img src="ziyuan/file_5bae3191885aa.png"></div>
+							<div onclick="login_k('mokuai1/wodexianzhi.html','wodexianzhi')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 103px; top: 222px; width: 61px;">我的闲置</div>
+							
+							
+							
+							<div onclick="login_k('tmpl/member/pintuan_list.html','pintuan_list')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 30px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 189px; top: 189px;border-radius: 7px;"><img src="ziyuan/pintuan.jpg"></div>
+							<div onclick="login_k('tmpl/member/pintuan_list.html','pintuan_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 171px; top: 222px; width: 61px;">我的拼团</div>
+							
+							<div onclick="login_k('mokuai1/wodehuati.html','wodehuati')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 30px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 253px; top: 189px;border-radius: 7px;"><img src="ziyuan/wodehuati.png"></div>
+							<div onclick="login_k('mokuai1/wodehuati.html','wodehuati')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 235px; top: 222px; width: 61px;">我的话题</div>
+							
+							
+							
+							
+							
+							
+							<div onclick="login_k('tmpl/member/predepositlog_list.html','predepositlog_list')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 47px; top: 262px;"><img src="ziyuan/file_5bae3185b6080.png"></div>
+							<div onclick="login_k('tmpl/member/predepositlog_list.html','predepositlog_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 27px; top: 292px; width: 61px;">消费账本</div>
+							<div onclick="login_k('tmpl/member/member_invite1.html','member_invite1')" class="element picture fenxiaoshouru" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 24px; width: 30px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 254px; top: 265px;display: none;"><img src="ziyuan/file_5bae318ac2ba4.png"></div>
+							<div onclick="login_k('tmpl/member/member_invite1.html','member_invite1')" class="element text fenxiaoshouru" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 235px; top: 292px; width: 61px;display: none;">分销收入</div>
+							
+							
+							<div onclick="login_k('tmpl/member/address_list.html','address_list')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 27px; width: 21px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 192px; top: 263px;"><img src="ziyuan/file_5bae3192c37dc.png"></div>
+							<div onclick="login_k('tmpl/member/address_list.html','address_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 171px; top: 293px; width: 61px;">我的地址</div>
+							
+							
+							
+							<div onclick="login_k('tmpl/cart_list.html','address_list')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 35px; width: 25px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 117px; top: 260px;"><img src="ziyuan/gouwuche.png"></div>
+							<div onclick="login_k('tmpl/cart_list.html','address_list')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 100px; top: 293px; width: 61px;">购物车</div>
+							
+							
+							
+							
+							
+							<div onclick="login_k('tmpl/member/member_feedback.html','member_feedback')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 45px; top: 338px;"><img src="ziyuan/file_5bae318055f91.png"></div>
+							<div onclick="login_k('tmpl/member/member_feedback.html','member_feedback')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 27px; top: 367px; width: 61px;">意见反馈</div>
+							<div onclick="k('mokuai1/huiyuanquanyi.html','huiyuanquanyi')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 119px; top: 338px;"><img src="ziyuan/file_5bae3197179f9.png"></div>
+							<div onclick="k('mokuai1/huiyuanquanyi.html','huiyuanquanyi')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 101px; top: 367px; width: 61px;">会员权益</div>
+							<div onclick="k('mokuai1/jiamenghezuo.html','jiamenghezuo')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 18px; width: 38px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 181px; top: 342px;"><img src="ziyuan/file_5bae3195b0231.png"></div>
+							<div onclick="k('mokuai1/jiamenghezuo.html','jiamenghezuo')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 171px; top: 367px; width: 61px;">加盟合作</div>
+							
+							<div onclick="k('mokuai1/kefuzhongxin.html','kefuzhongxin')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 34px; width: 34px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 252px; top: 333px;"><img src="ziyuan/kefu.png"></div>
+							
+							<div onclick="k('mokuai1/kefuzhongxin.html','kefuzhongxin')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 227px; top: 367px; width: 80px;">客服 / FAQ</div>
+							
+							
+							
+							
+							
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 26px; width: 26px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 185px; top: 395px;display: none;"><img src="ziyuan/gengxin.png"></div>
+							<div class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 170px; top: 424px; width: 61px;display: none;">更新版本</div>
+							
+							
+							<div onclick="k('mokuai1/zhengpinbaozhang.html','zhengpinbaozhang')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 34px; width: 34px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 116px; top: 389px;"><img src="ziyuan/jiayipeishi.png"></div>
+							<div onclick="k('mokuai1/zhengpinbaozhang.html','zhengpinbaozhang')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 101px; top: 424px; width: 61px;">正品保障</div>
+							
+							<div onclick="k('mokuai1/guanyuwomen.html','guanyuwomen')" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 21px; width: 28px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 45px; top: 396px;"><img src="ziyuan/file_5bae3198b6665.png"></div>
+							<div onclick="k('mokuai1/guanyuwomen.html','guanyuwomen')" class="element text" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px; color: rgb(0, 0, 0); font-size: 10px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: center; position: absolute; left: 27px; top: 424px; width: 61px;">关于我们</div>
+							
+							
+							
+							
+							
+							<div class="element picture hengxian" style="opacity: 1; background-color: rgb(178, 178, 178); border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 1px; width: 320px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 245px;"></div>
+							<div class="element picture hengxian" style="opacity: 1; background-color: rgb(178, 178, 178); border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 1px; width: 320px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 0px; top: 323px;"></div>
+								
+								
+								
+								
+								
+								
+								
+								
+							</div>
+							
+							
+							
+							
+							
+							
+						</div>
+					</div>
+					
+					
+					
+					<!-- 底栏 -->
+						<div class="ele-container" id="dilan-box" style="background-color: rgba(237,233,232,1);">
+						<div class="element free-vessel" style="width: 320px; height: 46px; margin: 0px auto auto 0px; opacity: 1;background: transparent;">
+							<div class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 10px; width: 311px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 7px; top: 0px;"><img src="ziyuan/file_5bb036f2d7d03.png"></div>
+							<div onclick="qiehuandilan(1)" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 21px; width: 21px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 26px; top: 7px;"><img src="ziyuan/shouye-i.png" class="dilanimg-1"></div>
+							<div onclick="qiehuandilan(1)" class="element text dilan-1" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 25px; top: 30px;">首页</div>
+							<div onclick="qiehuandilan(2)" class="element picture dilan-2" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 20px; width: 20px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 86px; top: 8px;"><img src="ziyuan/gonggao-i.png" class="dilanimg-2"></div>
+							<div onclick="qiehuandilan(2)" class="element text dilan-2" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 84px; top: 30px;">闲置</div>
+							<div onclick="qiehuandilan(4)" class="element picture dilan-4" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 19px; width: 21px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 213px; top: 9px;"><img src="ziyuan/fuwu-i.png" class="dilanimg-4"></div>
+							<div onclick="qiehuandilan(4)" class="element text dilan-4" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 212px; top: 30px;">发现</div>
+							<div onclick="qiehuandilan(5)" class="element picture dilan-5" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px; height: 19px; width: 18px; margin-left: 0px; margin-right: 0px; margin-top: 0px; position: absolute; left: 274px; top: 8px;"><img src="ziyuan/wode-icon.png" class="dilanimg-5"></div>
+							<div onclick="qiehuandilan(5)" class="element text dilan-5 active" style="background-color: rgba(0, 0, 0, 0); border-color: rgb(34, 34, 34); border-style: none; border-width: 2px;  font-size: 12px; height: 25px; line-height: 12px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 1; text-align: left; position: absolute; left: 271px; top: 30px;">我的</div>
+						</div>
+					</div>
+					<!-- //底栏 -->
+					
+					
+					
+					
+				</div>
+
+			</div>
+
+		</div>
+		
+		
+		
+		<div id="dilan-mai" onclick="qiehuandilan(3)" class="element picture" style="opacity: 1; background-color: transparent; border-color: rgb(34, 34, 34); border-radius: 0px; border-style: none; border-width: 0px;"><img src="ziyuan/woyaomai-i.png" class="dilanimg-3"></div>
+		
+		
+		
+
+		<div id="xialashuaxin-box">
+			<img src="../image/xialashuaxin-moren.png"/>
+		</div>
+		
+
+
+	</body>
+
+</html>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/api.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/wode.js" type="text/javascript" charset="utf-8"></script>

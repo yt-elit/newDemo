@@ -1,0 +1,160 @@
+﻿footer{ 
+	background-color:#3b3b3b; 
+	color:#fff; 
+	padding-bottom:2.2rem;
+}
+.foot-logo{
+	height:0.1rem; 
+	padding-top:0.3625rem;
+}
+.foot-logo span{ 
+	height:0.725rem; 
+	background-size:contain; 
+	display: block;
+}
+.foot-number{
+	width:196px;
+	margin:0 auto;
+	height:12px; 
+	background:url(../images/phone.png) no-repeat; 
+	background-size:contain;
+	margin-top: 10px;
+}
+.foot-number span{
+	float:left; 
+	font-size:12px; 
+	line-height:12px;
+}
+.foot-number .number1{
+	margin:0 0 0 16px;
+}
+.foot-number .number2{
+	margin:0 0 0 10px;
+}
+.foot-nav{
+	width:320px;
+	text-align: center;
+	margin:10px auto;
+	height:12px; 
+}
+.foot-nav>*{
+	float:left;
+}
+.foot-nav .foot-nav-btn{
+	font-size:12px; 
+	height: 12px;
+	line-height:12px;
+	color:#fff;
+	padding:0 4px;
+	border-right:1px solid #fff;
+}
+.foot-nav .foot_btn_1{
+	margin-left:10%;
+}
+.foot-nav .right{
+	border-right:none;
+}
+.company-name{
+	width:100%;
+	margin:10px auto;
+	text-align: center;
+	font-size:12px; 
+	height: 12px;
+	line-height: 12px; 
+}
+.company-English-name{
+	width:100%;
+	margin:10px auto; 
+	text-align: center;
+	font-size:12px; 
+	line-height:12px;
+	height: 12px; 
+}
+.company-location{
+	width:100%;
+	margin:10px auto;
+	text-align: center;
+	font-size:12px; 
+	line-height:12px;
+	height: 12px; 
+}
+.company-number{
+	width:100%;
+	height:26px;
+	margin:10px auto 0;
+	text-align: center; 
+	font-size:12px; 
+	line-height:26px;  
+	background:#333;
+	padding-bottom:5px;
+}	
+/*最底部小的联系方式*/
+.to_contact{
+	display:block;
+	width:100%;
+	height:2rem;
+	background: #162853;
+	overflow:hidden;
+	position: fixed;
+	left:0;
+	bottom:0; 
+}
+.to_c_l{
+	display:block;
+	width:49%;
+	height:2.4rem;
+	background: #162853;
+	float:left;
+	border-right:1px solid #fff;
+}
+.to_c_r{
+	display:block;
+	width:50%;
+	height:2.4rem;
+	background:#162853;
+	float:right;
+}
+.tel{
+	width:100px;
+	height:41px;
+	margin:.55rem auto 0;
+}
+.tel span.phone{
+	display:block;
+	width:25px;
+	height:20px;
+	background: url(../images/phone.png) no-repeat;
+	background-size:cover;
+	float:left;
+}
+.tel span.phone_number{
+	float:right;
+	display:block;
+	width:70px;
+	height:20px;
+	font-size:16px;
+	line-height:20px;
+	color:#fff;
+}
+.qq{
+	width:100px;
+	height:41px;
+	margin:.75rem auto 0;
+}
+.qq span.qq_1{
+	display:block;
+	width:19px;
+	height:21px;
+	background: url(../images/shangqiao.png) no-repeat;
+	background-size:cover;
+	float:left;
+}
+.qq span.qq_number{
+	float:right;
+	display:block;
+	width:70px;
+	height:20px;
+	font-size:16px;
+	line-height:20px;
+	color:#fff;
+}

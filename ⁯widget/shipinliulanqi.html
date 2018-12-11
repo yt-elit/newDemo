@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>图片浏览器导航条</title>
+		<script src="./js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css" />
+		<style type="text/css">
+			.mui-bar{
+				height: initial;
+			}
+			.mui-bar-nav{
+				box-shadow:none;
+				-webkit-box-shadow:none;
+			}
+			body,#header,html{
+				background:transparent;
+				
+			}
+			#biaoti,#jiantou{
+				color:white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav" style="display:none;">
+			<a id="jiantou" class="mui-icon mui-icon-left-nav mui-pull-left" onclick="msxBack();"></a>
+			<h1 class="mui-title" id="biaoti"></h1>
+		</header>
+	</body>
+	<script src="./js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+			var urls = geiGet('urls',false);
+			
+				urls = decodeURIComponent( decodeURIComponent( urls ) );
+			
+
+		function guanbi(){
+			setInterval(function(){
+				api.closeWin({
+					animation: {
+						type: 'none', //动画类型（详见动画类型常量）
+						subType: "none", //动画子类型（详见动画子类型常量）
+						duration: 0 //动画过渡时间，默认300毫秒
+					},
+				});
+			},44)
+		}
+		
+		apiready = function() {
+			
+				var videoPlayer = api.require('videoPlayer');
+				videoPlayer.play({
+				    texts: {
+				        head: {
+				            title: ''
+				        }
+				    },
+				    path: urls, //（可选项）字符串类型；文档的路径，支持网络和本地（fs://）路径；默认：未传值时不播放
+				    //在 android 平台上不支持 widget://
+				    autoPlay: true //（可选项）布尔类型；打开时是否自动播放；默认：true（自动播放）
+				}, function(ret, err) {
+				    if (ret) {
+				    	
+				    	if( ret.eventType == 'back' || ret.eventType == 'show' ){
+				    		guanbi();
+				    	}
+//				        alert(JSON.stringify(ret));
+				    } else {
+				    	guanbi();
+//				        alert(JSON.stringify(err));
+				    }
+				});
+
+
+
+//				var moviePlayer = api.require('moviePlayer');
+//					moviePlayer.open({
+//						rect: {
+//							x: 0,
+//							y: 0,
+//							w: api.frameWidth,
+//							h: 500
+//						},
+//						path: urls,
+//						autoPlay: true
+//					}, function(ret, err) {
+//						if(ret) {
+//							 alert(JSON.stringify(ret));
+//						}else{
+//							 alert(JSON.stringify(err));
+//						}
+//					
+//					});
+
+
+		};
+		
+		
+		
+		
+	</script>
+
+</html>

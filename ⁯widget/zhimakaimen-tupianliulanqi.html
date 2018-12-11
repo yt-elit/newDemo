@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>图片浏览器</title>
+		<script src="./js/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/mui.css" />
+		<style type="text/css">
+			.mui-bar{
+				height: initial;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav" style="display:none;">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="msxBack();"></a>
+			<h1 class="mui-title" id="biaoti"></h1>
+		</header>
+	</body>
+	<script src="./js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/api.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+			var shuzu = geiGet('shuzu',false);
+			var index = geiGet('index',false);
+				shuzu = encodeURIComponent(shuzu);
+				
+			var zongshu = decodeURIComponent(decodeURIComponent( decodeURIComponent( shuzu )));
+				zongshu = zongshu.split(',');
+
+				
+			var img_arr = zongshu;
+				
+				zongshu = zongshu.length;
+			
+
+		
+		apiready = function() {
+			
+			var headerH = 24;
+
+			//	如果是苹果
+			if(api.systemType == 'ios') {
+				headerH = 0;
+			}
+			
+			var photoBrowser = api.require('photoBrowser');
+			
+
+			
+			
+				photoBrowser.open({
+				    images: img_arr,
+				    activeIndex : index,
+				    placeholderImg: 'widget://res/image/loading_more.gif',
+				    bgColor: '#000'
+				}, function(ret, err) {
+				    if (ret) {
+				    	
+				    	if( ret.eventType == 'change' ){
+				    		var i = ret.index + 1;
+				    		
+				    		api.execScript({
+								name : 'tupianliulanqi-w',
+							    frameName: 'tupianliulan',
+							    script: 'gaibianbiaoti('+i+');'
+							});
+				    		
+				    	}
+				    	
+				    	if( ret.eventType == 'click' ){
+				    		msxBack();
+				    	}
+				    	
+//				        alert(JSON.stringify(ret));
+				    } else {
+				        msxBack();
+				    }
+				});
+			
+			
+//			var header = $api.byId('header');
+//			$api.fixStatusBar(header);
+//			var headerH = $api.offset(header).h + 10;
+//			headerH = 0;
+			var urls = 'tupianliulanqi.html?shuzu='+shuzu+'&index='+index;
+			var op = {'name':'tupianliulan','html':urls,'yh':headerH};
+			
+			qitaliulanqi(op);
+		};
+		
+		
+		function qitaliulanqi(op){
+			api.openFrame({
+				name: op.name,
+				url: op.html,
+				
+				bounces : false,
+				scaleEnabled : true,
+				rect: {
+					x: 0,
+					y: op.yh,
+					w: 'auto',
+					h: 40,
+				}
+			});
+		}
+		
+	</script>
+
+</html>

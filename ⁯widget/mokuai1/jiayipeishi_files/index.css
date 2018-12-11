@@ -1,0 +1,181 @@
+﻿.body{
+	width:100%;
+	margin:0 auto;
+	overflow: hidden;
+}
+html{
+	font-size:20px;
+}
+.split{
+	width:100%;
+	height:1px;
+	background:#fff;
+}
+.swiper-container {
+	width: 100%;
+}
+.swiper-container img{
+	width:100%;
+	height:9.375rem;
+}
+.content{
+	padding-top:30px;
+	padding-bottom:30x;
+}
+.content .title{
+	display:-webkit-box;
+	width:100%;
+	display:-moz-box;
+	display:-ms-box;
+	display:-o-box;
+	display:box;
+	margin-bottom:20px;
+}
+.content .title li{
+	height:20px;
+	line-height:20px;
+	color:#fff;
+	text-align:center;
+	color:#000;
+	font-size:17px;
+}
+.center-name{
+	-webkit-box-flex:3;
+	-moz-box-flex:3;
+	-ms-box-flex:3;
+	-o-box-flex:3;
+	-box-flex:3;
+}
+.left-line,.right-line{
+	-webkit-box-flex:5;
+	-moz-box-flex:5;
+	-ms-box-flex:5;
+	-o-box-flex:5;
+	-box-flex:5;
+}
+.left-line span{
+	width:70px;
+	height:2px;
+	background:url(../images/group1-line.png) no-repeat center;
+	float:right;
+	margin-top:10px;
+}
+.right-line span{
+	width:70px;
+	height:2px;
+	background:url(../images/group1-line.png) no-repeat center;
+	float:left;
+	margin-top:10px;
+}
+
+.app-service{
+	width:100%;
+	padding:0 4.83vw;
+}
+.app-service .service{
+	width:32.26%;
+	margin:1% 6% ;
+	float:left;
+}
+.app-service .service img{
+	width:73%;
+	margin:0 auto;
+	display:inline-block;
+	display:none;
+}
+.app-service .service img.active{
+	display:block;
+}
+.app-service .service .app-explain{
+	text-align: center;
+}
+
+.app-explain{
+	font-size:12px;
+	line-height:40px;
+	color:#000;
+	margin:0 -28px 15px;
+}
+.content .case{
+	width:100%;
+	padding:0 4.83vw;
+	margin-left:-0.644vw;
+}
+
+.content .case a{
+	width:29.95%;
+	margin:0.644vw 0.644vw;
+	float:left;
+}
+.content .case a img{
+	width:100%;
+}
+.content .case a span{
+	width:100%;
+	height:100%;
+	background:#0074d3;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	position:absolute;
+	top:100%;
+	left:0;
+	z-index:10;
+	display:none;
+}
+.paragraph{
+	color:#464646;
+	font-size:13px;
+	line-height:24px;
+	padding:30px 8px 15px 8px;
+}
+.famous-people{
+	color:#464646;
+	font-size:15px;
+	line-height:24px;
+	text-align: right;
+	padding:0 8px;
+}
+.partner{
+	width:278px;
+	height:20px;
+	line-height: 20px;
+	margin:15px auto 0;
+	overflow: hidden;
+}
+.partner span{
+	float:left;
+	font-size:12px;
+	height:12px;
+	line-height:12px;
+	color:#1189ff;
+}
+.partner a{
+	float:left;
+	height:12px;
+	font-size:12px;
+	line-height:12px;
+	color:#1189ff;
+	padding:0 8px;
+	border-right:1px solid #5ca5ff;
+	text-decoration: none;
+}
+.partner a.on{
+	border-right:none;
+}
+.partner_1{
+	width:248px;
+	margin:0 auto 10px;
+}
+.partner_1 a{
+	float:left;
+	height:12px;
+	font-size:12px;
+	line-height:12px;
+	color:#1189ff;
+	padding:0 8px;
+	border-right:1px solid #5ca5ff;
+	text-decoration: none;
+}
+.partner_1 a.on{
+	border-right:none;
+}
